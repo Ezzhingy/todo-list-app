@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container, .main-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.title {
+    grid-column: 2;
+}
+
+.title h1 {
+    margin-top: 100px;
+    font-size: 3.5rem;
+}
+
+.title h2 {
+    font-weight: lighter;
+    font-size: 2.5rem;
+    width: fit-content;
+    background-color: #fffdbd;
+}
+
+.new-pro, .new-task {
+    background-color: transparent;
+    border: 1px solid green;
+    color: green;
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    margin-top: 40px;
+}
+
+.new-pro:hover, .new-task:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.pro-container {
+    grid-column: 2;
+    margin-top: 100px;
+    position: relative;
+}
+
+.arrow {
+    position: absolute;
+    top: 0;
+    left: -3vw;
+    margin-left: -20px;
+    width: 40px;
+    height: 60px;
+    color: black;
+}
+
+.arrow.right {
+    display: none;
+}
+
+.arrow:hover {
+    cursor: pointer;
+}
+
+.pro-container {
+    width: 70%;
+}
+
+.pro-container h1 {
+    text-decoration: underline;
+    width: fit-content;
+}
+
+.taskbar {
+    display: flex;
+    justify-content: space-around;
+}
+
+.new-task {
+    margin: 0;
+    padding: 20px 55px;
+}
+
+
