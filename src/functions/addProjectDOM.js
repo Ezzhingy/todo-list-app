@@ -11,9 +11,9 @@ export function showNewProject (info) {
     const newClass = currentClass + 1;
     cloneProContainer.classList.remove(currentClass)
     cloneProContainer.classList.add(newClass);
-    const newTaskFake = cloneProContainer.querySelector('.new-task');
-    const newData = +newTaskFake.getAttribute('data-key') + 1;
-    newTaskFake.setAttribute('data-key', newData);
+    const addTaskFake = cloneProContainer.querySelector('.add-task');
+    const newData = +addTaskFake.getAttribute('data-key') + 1;
+    addTaskFake.setAttribute('data-key', newData);
 
     const proContent = cloneProContainer.querySelector('.pro-content');
     proContent.innerHTML = '';

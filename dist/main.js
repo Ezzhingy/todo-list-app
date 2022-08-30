@@ -585,24 +585,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "getProjectInfo": () => (/* binding */ getProjectInfo),
 /* harmony export */   "getTaskInfo": () => (/* binding */ getTaskInfo),
-/* harmony export */   "showModal": () => (/* binding */ showModal)
+/* harmony export */   "showModal": () => (/* binding */ showModal),
+/* harmony export */   "showNewTask": () => (/* binding */ showNewTask)
 /* harmony export */ });
-function showModal () {
+function showModal (e) {
     const spans = document.querySelectorAll(".close");
-    const addBtn = document.querySelector('.add-task');
+    const addBtns = document.querySelectorAll('.add-task');
     const addProjectBtn = document.querySelector('.add-pro');
 
-    const newTask = document.querySelector('.new-task');
+    if (e.target.className === 'new-task') {
+        const newTask = e.target;
+        addTask(newTask);
+    }
+
     const newProject = document.querySelector('.new-pro');
-
-
-    newTask.addEventListener('click', addTask);
     newProject.addEventListener('click', addProject);
 
     spans.forEach(span => {
         span.addEventListener('click', closeModal);
     });
-    addBtn.addEventListener('click', closeModal);
+    addBtns.forEach(addBtn => {
+        addBtn.addEventListener('click', closeModal);
+    });
     addProjectBtn.addEventListener('click', closeModal);
     window.addEventListener('click', closeModalW);
 }
@@ -627,9 +631,9 @@ function closeModal () {
     });
 }
 
-function addTask () {
+function addTask (newTask) {
     const body = document.querySelector('body');
-    const modal = document.querySelector('#modal-task');
+    const modal = newTask.nextElementSibling;
     modal.style.display = 'block';
     body.style.overflow = 'hidden';
 }
@@ -641,13 +645,15 @@ function addProject () {
     body.style.overflow = 'hidden';
 }
 
-function getTaskInfo () {
-    const taskName = document.getElementById('task-name').value;
-    const dueDate = document.getElementById('due-date').value;
-    const prio = document.querySelector('input[name="prio"]:checked').value;
-    const description = document.getElementById('description').value;
+function getTaskInfo (e) {
+    const parent = e.target.parentElement.parentElement;
+    const taskName = parent.querySelector('#task-name').value;
+    const dueDate = parent.querySelector('#due-date').value;
+    const prio = parent.querySelector('input[name="prio"]:checked').value;
+    const description = parent.querySelector('#description').value;
 
-    document.querySelector(".task-form").reset();
+    parent.reset();
+
     return {'taskName':taskName, 
             'dueDate':dueDate,
             'prio':prio,
@@ -659,6 +665,10 @@ function getProjectInfo () {
     const projectName = document.getElementById('pro-name').value;
     
     return projectName;
+}
+
+function showNewTask (allProjects) {
+    
 }
 
 /***/ }),
@@ -674,12 +684,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _tasksProjectsLogic__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16);
 
 
-function addTasktoProject (e, info) {
-    console.log('addtasktoproject');
+function addTasktoProject (project, info, allProjects) {
+    const newTask = (0,_tasksProjectsLogic__WEBPACK_IMPORTED_MODULE_0__.todo)(info['taskName'], info['dueDate'], info['prio'], info['description']);
+    allProjects[project].addTodo(newTask);
 }
 
 function whichProject (e) {
-    console.log('whichproject')
+    const projectNum = e.target.getAttribute('data-key');
+    return projectNum;
 }
 
 function createProject (allProjects) {
@@ -740,9 +752,9 @@ function showNewProject (info) {
     const newClass = currentClass + 1;
     cloneProContainer.classList.remove(currentClass)
     cloneProContainer.classList.add(newClass);
-    const newTaskFake = cloneProContainer.querySelector('.new-task');
-    const newData = +newTaskFake.getAttribute('data-key') + 1;
-    newTaskFake.setAttribute('data-key', newData);
+    const addTaskFake = cloneProContainer.querySelector('.add-task');
+    const newData = +addTaskFake.getAttribute('data-key') + 1;
+    addTaskFake.setAttribute('data-key', newData);
 
     const proContent = cloneProContainer.querySelector('.pro-content');
     proContent.innerHTML = '';
@@ -855,20 +867,16 @@ __webpack_require__.r(__webpack_exports__);
 
 const allProjects = {0:(0,_functions_tasksProjectsLogic__WEBPACK_IMPORTED_MODULE_5__.project)()};
 
-(0,_functions_addTaskDOM__WEBPACK_IMPORTED_MODULE_3__.showModal)();
-
 document.onclick = function (e) {
     (0,_functions_hideUnhideArrowsDOM__WEBPACK_IMPORTED_MODULE_2__.hideUnhide)(e);
-}
+    (0,_functions_addTaskDOM__WEBPACK_IMPORTED_MODULE_3__.showModal)(e);
 
-const addTaskBtn = document.querySelector('.add-task')
-addTaskBtn.onclick = function (e) {
-    // need to find which project 'add task' btn is attached to
-    const project = (0,_functions_applicationLogic__WEBPACK_IMPORTED_MODULE_4__.whichProject)(e);
-    const info = (0,_functions_addTaskDOM__WEBPACK_IMPORTED_MODULE_3__.getTaskInfo)();
-    (0,_functions_applicationLogic__WEBPACK_IMPORTED_MODULE_4__.addTasktoProject)(e, info);
-
-    document.querySelector(".task-form").reset();
+    if (e.target.className === 'add-task') {
+        const project = (0,_functions_applicationLogic__WEBPACK_IMPORTED_MODULE_4__.whichProject)(e);
+        const info = (0,_functions_addTaskDOM__WEBPACK_IMPORTED_MODULE_3__.getTaskInfo)(e);
+        (0,_functions_applicationLogic__WEBPACK_IMPORTED_MODULE_4__.addTasktoProject)(project, info, allProjects);
+        (0,_functions_addTaskDOM__WEBPACK_IMPORTED_MODULE_3__.showNewTask)(allProjects);
+    }
 }
 
 const addProjectBtn = document.querySelector('.add-pro');
@@ -878,7 +886,6 @@ addProjectBtn.onclick = function () {
     (0,_functions_addProjectDOM__WEBPACK_IMPORTED_MODULE_6__.showNewProject)(info);
 
     document.querySelector(".add-form").reset();
-
 }
 
 

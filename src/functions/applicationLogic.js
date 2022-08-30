@@ -1,11 +1,13 @@
 import { project, todo } from "./tasksProjectsLogic";
 
-export function addTasktoProject (e, info) {
-    console.log('addtasktoproject');
+export function addTasktoProject (project, info, allProjects) {
+    const newTask = todo(info['taskName'], info['dueDate'], info['prio'], info['description']);
+    allProjects[project].addTodo(newTask);
 }
 
 export function whichProject (e) {
-    console.log('whichproject')
+    const projectNum = e.target.getAttribute('data-key');
+    return projectNum;
 }
 
 export function createProject (allProjects) {

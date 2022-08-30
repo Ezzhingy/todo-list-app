@@ -1,19 +1,22 @@
-export function showModal () {
+export function showModal (e) {
     const spans = document.querySelectorAll(".close");
-    const addBtn = document.querySelector('.add-task');
+    const addBtns = document.querySelectorAll('.add-task');
     const addProjectBtn = document.querySelector('.add-pro');
 
-    const newTask = document.querySelector('.new-task');
+    if (e.target.className === 'new-task') {
+        const newTask = e.target;
+        addTask(newTask);
+    }
+
     const newProject = document.querySelector('.new-pro');
-
-
-    newTask.addEventListener('click', addTask);
     newProject.addEventListener('click', addProject);
 
     spans.forEach(span => {
         span.addEventListener('click', closeModal);
     });
-    addBtn.addEventListener('click', closeModal);
+    addBtns.forEach(addBtn => {
+        addBtn.addEventListener('click', closeModal);
+    });
     addProjectBtn.addEventListener('click', closeModal);
     window.addEventListener('click', closeModalW);
 }
@@ -38,9 +41,9 @@ function closeModal () {
     });
 }
 
-function addTask () {
+function addTask (newTask) {
     const body = document.querySelector('body');
-    const modal = document.querySelector('#modal-task');
+    const modal = newTask.nextElementSibling;
     modal.style.display = 'block';
     body.style.overflow = 'hidden';
 }
@@ -52,13 +55,15 @@ function addProject () {
     body.style.overflow = 'hidden';
 }
 
-export function getTaskInfo () {
-    const taskName = document.getElementById('task-name').value;
-    const dueDate = document.getElementById('due-date').value;
-    const prio = document.querySelector('input[name="prio"]:checked').value;
-    const description = document.getElementById('description').value;
+export function getTaskInfo (e) {
+    const parent = e.target.parentElement.parentElement;
+    const taskName = parent.querySelector('#task-name').value;
+    const dueDate = parent.querySelector('#due-date').value;
+    const prio = parent.querySelector('input[name="prio"]:checked').value;
+    const description = parent.querySelector('#description').value;
 
-    document.querySelector(".task-form").reset();
+    parent.reset();
+
     return {'taskName':taskName, 
             'dueDate':dueDate,
             'prio':prio,
@@ -70,4 +75,8 @@ export function getProjectInfo () {
     const projectName = document.getElementById('pro-name').value;
     
     return projectName;
+}
+
+export function showNewTask (allProjects) {
+    
 }
