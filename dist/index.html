@@ -13,10 +13,24 @@
             <h1>My TODO List</h1>
             <h2>Get it done!</h2>
             <button class="new-pro">New Project</button>
+            <div class="modal" id="modal-pro">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <form class="add-form">
+                        <div class="input-container">
+                            <label for="pro-name">Project Name</label>
+                            <input type="text" id="pro-name" name="pro-name">
+                        </div>
+                        <div class="btn-container">
+                            <button class="add-pro" type="button">Add Project</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
     <div class="main-container">
-        <div class="pro-container">
+        <div class="pro-container a ">
             <h1 contenteditable="true">My First Project</h1>
             <div class="arrow down"><i class="fa fa-angle-down fa-5x" id="open" aria-hidden="true"></i></div>
             <div class="arrow right"><i class="fa fa-angle-right fa-5x" id="closed" aria-hidden="true"></i></div>
@@ -26,12 +40,50 @@
                     <h2>Due Date</h2>
                     <h2>Priority</h2>
                     <h2>Remove</h2>
-                    <button class="new-task">Add Task</button>
+                    <button data-key='0' class="new-task">Add Task</button>
+                    <div class="modal" id="modal-task">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <form class="task-form">
+
+                                <div class="input-container">
+                                    <label for="task-name">Task Name</label>
+                                    <input type="text" id="task-name" name="task-name">
+                                </div>
+
+                                <div class="input-container">
+                                    <label for="due-date">Due Date</label>
+                                    <input type="date" id="due-date" name="due-date">
+                                </div>
+
+                                <div class="radio-container">
+                                    <label>Priority</label>
+
+                                    <label for="yes">Yes</label>
+                                    <input type="radio" id="yes" name="prio" value="yes">
+
+                                    <label for="no">No</label>
+                                    <input type="radio" id="no" name="prio" value="no" checked>
+                                </div>
+
+                                <div class="textarea-container">
+                                    <label for="description">Description</label>
+                                    <textarea id="description" name="description" rows="5" cols="40"></textarea>
+                                </div>
+
+                                <div class="btn-container">
+                                    <button class="add-task" type="button">Add Task</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <hr>
             </div>
-
+            <div class="pro-content">
+            </div>
         </div>
+    </div>
     <script src="./main.js"></script>
 </body>
 </html>

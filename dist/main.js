@@ -539,7 +539,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n    font-family: Arial, Helvetica, sans-serif;\n}\n\n.container, .main-container {\n    display: grid;\n    grid-template-columns: 1fr 4fr;\n}\n\n.title {\n    grid-column: 2;\n}\n\n.title h1 {\n    margin-top: 100px;\n    font-size: 3.5rem;\n}\n\n.title h2 {\n    font-weight: lighter;\n    font-size: 2.5rem;\n    width: fit-content;\n    background-color: #fffdbd;\n}\n\n.new-pro, .new-task {\n    background-color: transparent;\n    border: 1px solid green;\n    color: green;\n    padding: 20px 40px;\n    font-size: 1.5rem;\n    margin-top: 40px;\n}\n\n.new-pro:hover, .new-task:hover {\n    text-decoration: underline;\n    cursor: pointer;\n}\n\n.pro-container {\n    grid-column: 2;\n    margin-top: 100px;\n    position: relative;\n}\n\n.arrow {\n    position: absolute;\n    top: 0;\n    left: -3vw;\n    margin-left: -20px;\n    width: 40px;\n    height: 60px;\n    color: black;\n}\n\n.arrow.right {\n    display: none;\n}\n\n.arrow:hover {\n    cursor: pointer;\n}\n\n.pro-container {\n    width: 70%;\n}\n\n.pro-container h1 {\n    text-decoration: underline;\n    width: fit-content;\n}\n\n.taskbar {\n    display: flex;\n    justify-content: space-around;\n}\n\n.new-task {\n    margin: 0;\n    padding: 20px 55px;\n}\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n    font-family: Arial, Helvetica, sans-serif;\n}\n\n.container, .main-container {\n    display: grid;\n    grid-template-columns: 1fr 4fr;\n}\n\n.title {\n    grid-column: 2;\n}\n\n.title h1 {\n    margin-top: 100px;\n    font-size: 3.5rem;\n}\n\n.title h2 {\n    font-weight: lighter;\n    font-size: 2.5rem;\n    width: fit-content;\n    background-color: #fffdbd;\n}\n\n.new-pro, .new-task, .add-task, .add-pro {\n    background-color: transparent;\n    border: 1px solid green;\n    color: green;\n    padding: 20px 40px;\n    font-size: 1.5rem;\n    margin-top: 40px;\n}\n\n.new-pro:hover, .new-task:hover, .add-task:hover, .add-pro:hover {\n    text-decoration: underline;\n    cursor: pointer;\n}\n\n.pro-container {\n    grid-column: 2;\n    margin-top: 100px;\n    position: relative;\n}\n\n.arrow {\n    position: absolute;\n    top: 0;\n    left: -3vw;\n    margin-left: -20px;\n    width: 40px;\n    height: 60px;\n    color: black;\n}\n\n.arrow.right {\n    display: none;\n}\n\n.arrow:hover {\n    cursor: pointer;\n}\n\n.pro-container {\n    width: 70%;\n}\n\n.pro-container h1 {\n    text-decoration: underline;\n    width: fit-content;\n}\n\n.taskbar {\n    display: flex;\n    justify-content: space-around;\n}\n\n.new-task {\n    margin: 0;\n    padding: 20px 55px;\n}\n\n.modal {\n    display: none;\n    position: fixed;\n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%;\n    overflow: auto;\n    background-color: rgb(0,0,0); \n    background-color: rgba(0, 0, 0, 0.4); \n}\n\n.modal-content {\n    background-color: white;\n    margin: 15% auto;\n    padding: 20px;\n    width: max(20%, 300px);\n}\n\n.close {\n    color: #aaa;\n    float: right;\n    font-size: 28px;\n    font-weight: bold;\n}\n  \n.close:hover,\n.close:focus {\n    color: black;\n    text-decoration: none;\n    cursor: pointer;\n}\n\n.input-container, .textarea-container {\n    display: flex;\n    flex-direction: column;\n    width: fit-content;\n    padding: 10px;\n}\n\nform label {\n    font-weight: 700;\n}\n\n.radio-container label:not(:first-child) {\n    font-weight: normal;\n}\n\n.radio-container {\n    padding: 10px;\n}\n\n.add-task, .add-pro {\n    font-size: 1.2rem;\n    padding: 15px 32px;\n    margin: 0;\n}\n\n.btn-container {\n    display: flex;\n    justify-content: center;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -554,26 +554,210 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function hideUnhide (e) {
     if (e.target.id === 'closed') {
-        const open = document.querySelector('.down');
-        const closed = document.querySelector('.right');
-        const proTaskbar = document.querySelector('.pro-taskbar');
+        const proClass = e.target.parentElement.parentElement.className.split(' ')[1];
+        const open = document.querySelector(`.${proClass} .down`);
+        const closed = document.querySelector(`.${proClass} .right`);
+        const proTaskbar = document.querySelector(`.${proClass} .pro-taskbar`);
 
         open.style.display = 'block';
         closed.style.display = 'none';
-        proTaskbar.style.display = 'block'
+        proTaskbar.style.display = 'block';
 
     } else if (e.target.id === 'open') {
-        const open = document.querySelector('.down');
-        const closed = document.querySelector('.right');
-        const proTaskbar = document.querySelector('.pro-taskbar');
+        const proClass = e.target.parentElement.parentElement.className.split(' ')[1];
+        const open = document.querySelector(`.${proClass} .down`);
+        const closed = document.querySelector(`.${proClass} .right`);
+        const proTaskbar = document.querySelector(`.${proClass} .pro-taskbar`);
 
         open.style.display = 'none';
         closed.style.display = 'block';
-        proTaskbar.style.display = 'none'
+        proTaskbar.style.display = 'none';
     }
 }
 
 
+
+/***/ }),
+/* 14 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "getProjectInfo": () => (/* binding */ getProjectInfo),
+/* harmony export */   "getTaskInfo": () => (/* binding */ getTaskInfo),
+/* harmony export */   "showModal": () => (/* binding */ showModal)
+/* harmony export */ });
+function showModal () {
+    const spans = document.querySelectorAll(".close");
+    const addBtn = document.querySelector('.add-task');
+    const addProjectBtn = document.querySelector('.add-pro');
+
+    const newTask = document.querySelector('.new-task');
+    const newProject = document.querySelector('.new-pro');
+
+
+    newTask.addEventListener('click', addTask);
+    newProject.addEventListener('click', addProject);
+
+    spans.forEach(span => {
+        span.addEventListener('click', closeModal);
+    });
+    addBtn.addEventListener('click', closeModal);
+    addProjectBtn.addEventListener('click', closeModal);
+    window.addEventListener('click', closeModalW);
+}
+
+function closeModalW (e) {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+        if (e.target === modal) {
+            const body = document.querySelector('body');
+            modal.style.display = 'none';
+            body.style.overflow = 'auto';
+        }
+    });
+}
+
+function closeModal () {
+    const body = document.querySelector('body');
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+        modal.style.display = 'none';
+        body.style.overflow = 'auto';
+    });
+}
+
+function addTask () {
+    const body = document.querySelector('body');
+    const modal = document.querySelector('#modal-task');
+    modal.style.display = 'block';
+    body.style.overflow = 'hidden';
+}
+
+function addProject () {
+    const body = document.querySelector('body');
+    const modal = document.querySelector('#modal-pro');
+    modal.style.display = 'block';
+    body.style.overflow = 'hidden';
+}
+
+function getTaskInfo () {
+    const taskName = document.getElementById('task-name').value;
+    const dueDate = document.getElementById('due-date').value;
+    const prio = document.querySelector('input[name="prio"]:checked').value;
+    const description = document.getElementById('description').value;
+
+    document.querySelector(".task-form").reset();
+    return {'taskName':taskName, 
+            'dueDate':dueDate,
+            'prio':prio,
+            'description':description
+    };
+}
+
+function getProjectInfo () {
+    const projectName = document.getElementById('pro-name').value;
+    
+    return projectName;
+}
+
+/***/ }),
+/* 15 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "addTasktoProject": () => (/* binding */ addTasktoProject),
+/* harmony export */   "createProject": () => (/* binding */ createProject),
+/* harmony export */   "whichProject": () => (/* binding */ whichProject)
+/* harmony export */ });
+/* harmony import */ var _tasksProjectsLogic__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16);
+
+
+function addTasktoProject (e, info) {
+    console.log('addtasktoproject');
+}
+
+function whichProject (e) {
+    console.log('whichproject')
+}
+
+function createProject (allProjects) {
+    const newProject = (0,_tasksProjectsLogic__WEBPACK_IMPORTED_MODULE_0__.project)();
+    if (Object.keys(allProjects).length === 0) {
+        allProjects['0'] = newProject
+    } else {
+        const lastKey = Object.keys(allProjects).pop();
+        const newkey = +lastKey + 1;
+        allProjects[newkey] = newProject;
+    }
+
+    return allProjects;
+}
+
+/***/ }),
+/* 16 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "project": () => (/* binding */ project),
+/* harmony export */   "todo": () => (/* binding */ todo)
+/* harmony export */ });
+function project () {
+    const allTodos = [];
+    const addTodo = todo => {
+        allTodos.push(todo);
+    }
+    const getTodo = () => {
+        return allTodos;
+    }
+    return {addTodo, getTodo};
+}
+
+function todo (taskName, dueDate, priority, description) {
+    return {taskName, dueDate, priority, description};
+}
+
+/***/ }),
+/* 17 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "showNewProject": () => (/* binding */ showNewProject)
+/* harmony export */ });
+function showNewProject (info) {
+    const mainContainer = document.querySelector('.main-container');
+
+    const proContainerNode = Array.from(document.querySelectorAll('.pro-container')).pop();
+    const cloneProContainer = proContainerNode.cloneNode(true);
+
+    const title = cloneProContainer.querySelector('h1');
+    title.innerText = info;
+
+    const currentClass = cloneProContainer.className.split(' ')[1];
+    const newClass = currentClass + 1;
+    cloneProContainer.classList.remove(currentClass)
+    cloneProContainer.classList.add(newClass);
+    const newTaskFake = cloneProContainer.querySelector('.new-task');
+    const newData = +newTaskFake.getAttribute('data-key') + 1;
+    newTaskFake.setAttribute('data-key', newData);
+
+    const proContent = cloneProContainer.querySelector('.pro-content');
+    proContent.innerHTML = '';
+
+    const proTaskbar = cloneProContainer.querySelector('.pro-taskbar');
+    const down = cloneProContainer.querySelector('.down');
+    const right = cloneProContainer.querySelector('.right');
+    down.style.display = 'block';
+    proTaskbar.style.display = 'block';
+    right.style.display = 'none';
+
+    mainContainer.appendChild(cloneProContainer);
+
+
+}
 
 /***/ })
 /******/ 	]);
@@ -655,15 +839,49 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_normalize_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
-/* harmony import */ var _functions_hideUnhide__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13);
+/* harmony import */ var _functions_hideUnhideArrowsDOM__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13);
+/* harmony import */ var _functions_addTaskDOM__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(14);
+/* harmony import */ var _functions_applicationLogic__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(15);
+/* harmony import */ var _functions_tasksProjectsLogic__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(16);
+/* harmony import */ var _functions_addProjectDOM__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(17);
 
 
 
 
+
+
+
+
+
+const allProjects = {0:(0,_functions_tasksProjectsLogic__WEBPACK_IMPORTED_MODULE_5__.project)()};
+
+(0,_functions_addTaskDOM__WEBPACK_IMPORTED_MODULE_3__.showModal)();
 
 document.onclick = function (e) {
-    (0,_functions_hideUnhide__WEBPACK_IMPORTED_MODULE_2__.hideUnhide)(e);
+    (0,_functions_hideUnhideArrowsDOM__WEBPACK_IMPORTED_MODULE_2__.hideUnhide)(e);
 }
+
+const addTaskBtn = document.querySelector('.add-task')
+addTaskBtn.onclick = function (e) {
+    // need to find which project 'add task' btn is attached to
+    const project = (0,_functions_applicationLogic__WEBPACK_IMPORTED_MODULE_4__.whichProject)(e);
+    const info = (0,_functions_addTaskDOM__WEBPACK_IMPORTED_MODULE_3__.getTaskInfo)();
+    (0,_functions_applicationLogic__WEBPACK_IMPORTED_MODULE_4__.addTasktoProject)(e, info);
+
+    document.querySelector(".task-form").reset();
+}
+
+const addProjectBtn = document.querySelector('.add-pro');
+addProjectBtn.onclick = function () {
+    (0,_functions_applicationLogic__WEBPACK_IMPORTED_MODULE_4__.createProject)(allProjects);
+    const info = (0,_functions_addTaskDOM__WEBPACK_IMPORTED_MODULE_3__.getProjectInfo)();
+    (0,_functions_addProjectDOM__WEBPACK_IMPORTED_MODULE_6__.showNewProject)(info);
+
+    document.querySelector(".add-form").reset();
+
+}
+
+
 })();
 
 /******/ })()
