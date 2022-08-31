@@ -1,6 +1,8 @@
+import removeImg from '../images/delete.svg';
+
+
 export function getProjectInfo () {
-    const projectName = document.getElementById('pro-name').value;
-    
+    const projectName = document.getElementById('pro-name').value; 
     return projectName;
 }
 
@@ -12,6 +14,13 @@ export function showNewProject (info) {
 
     const title = cloneProContainer.querySelector('h1');
     title.innerText = info;
+
+    const remove = document.createElement('img');
+    remove.classList.add('remove-pro-img');
+    remove.src = removeImg;
+
+    const thead = cloneProContainer.querySelector('thead');
+    thead.appendChild(remove);
 
     const currentClass = cloneProContainer.className.split(' ')[1];
     const newClass = currentClass + 1;
@@ -36,4 +45,11 @@ export function showNewProject (info) {
     right.style.display = 'none';
 
     mainContainer.appendChild(cloneProContainer);
+}
+
+export function removeProDOM (e) {
+    const project = e.target.parentElement.nextElementSibling.getAttribute('data-value');
+    const content = e.target.parentElement.parentElement.parentElement.parentElement;
+    content.remove();
+    return project;    
 }

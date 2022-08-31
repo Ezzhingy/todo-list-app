@@ -5,9 +5,9 @@ import './styles/checkbox.css';
 
 import { hideUnhidePro, hideUnhideTask } from './functions/hideUnhideArrowsDOM';
 import { getTaskInfo, showNewTask, removeTaskDOM } from './functions/addTaskDOM';
-import { addTasktoProject, whichProject, createProject, organizeTasks, removeTask } from './functions/applicationLogic'
+import { addTasktoProject, whichProject, createProject, organizeTasks, removeTask, removePro } from './functions/applicationLogic'
 import { project } from './functions/tasksProjectsLogic';
-import { getProjectInfo, showNewProject } from './functions/addProjectDOM';
+import { getProjectInfo, removeProDOM, showNewProject } from './functions/addProjectDOM';
 import { showModal } from './functions/addModalDOM';
 import { formDate } from './functions/setFormDateDOM';
 
@@ -34,6 +34,11 @@ document.onclick = function (e) {
     if (e.target.className === 'remove-task-img') {
         const indexProjectArray = removeTaskDOM(e);
         removeTask(indexProjectArray, allProjects);
+    }
+
+    if (e.target.className === 'remove-pro-img') {
+        const project = removeProDOM(e);
+        removePro(project, allProjects);
     }
 }
 

@@ -54,3 +54,7 @@ export function removeTask (indexProjectArray, allProjects) {
 
     allProjects[project].removeTodo(index);
 }
+
+export function removePro (project, allProjects) {
+    delete allProjects[project];
+}

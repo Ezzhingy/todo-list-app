@@ -539,7 +539,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n    font-family: Arial, Helvetica, sans-serif;\n}\n\n.container, .main-container {\n    display: grid;\n    grid-template-columns: 1fr 4fr;\n}\n\n.title {\n    grid-column: 2;\n}\n\n.title h1 {\n    margin-top: 100px;\n    font-size: 3.5rem;\n}\n\n.title h2 {\n    font-weight: lighter;\n    font-size: 2.5rem;\n    width: fit-content;\n    background-color: #fffdbd;\n}\n\n.new-pro, .new-task, .add-task, .add-pro {\n    background-color: transparent;\n    border: 1px solid green;\n    color: green;\n    padding: 20px 40px;\n    font-size: 1.5rem;\n    margin-top: 40px;\n}\n\n.new-pro:hover, .new-task:hover, .add-task:hover, .add-pro:hover {\n    text-decoration: underline;\n    cursor: pointer;\n}\n\n.pro-container {\n    grid-column: 2;\n    margin-top: 100px;\n    position: relative;\n}\n\n.arrow {\n    position: absolute;\n    top: 0;\n    left: -3vw;\n    margin-left: -20px;\n    width: 40px;\n    height: 60px;\n    color: black;\n}\n\n.arrow.right {\n    display: none;\n}\n\n.arrow:hover {\n    cursor: pointer;\n}\n\n.pro-container h1 {\n    text-decoration: underline;\n    width: fit-content;\n}\n\n.new-task {\n    margin: 0;\n    padding: 20px 55px;\n}\n\n.modal {\n    display: none;\n    position: fixed;\n    z-index: 1000;\n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%;\n    overflow: auto;\n    background-color: rgb(0,0,0); \n    background-color: rgba(0, 0, 0, 0.4); \n}\n\n.modal-content {\n    background-color: white;\n    margin: 15% auto;\n    padding: 20px;\n    width: max(20%, 300px);\n}\n\n.close {\n    color: #aaa;\n    float: right;\n    font-size: 28px;\n    font-weight: bold;\n}\n  \n.close:hover,\n.close:focus {\n    color: black;\n    text-decoration: none;\n    cursor: pointer;\n}\n\n.input-container, .textarea-container {\n    display: flex;\n    flex-direction: column;\n    width: fit-content;\n    padding: 10px;\n}\n\nform label {\n    font-weight: 700;\n    text-align: start;\n    font-size: medium;\n}\n\ninput {\n    font-size: medium;\n}\n\n.radio-container label:not(:first-child) {\n    font-weight: normal;\n}\n\n.radio-container {\n    padding: 10px;\n    text-align: start;\n}\n\ntextarea {\n    font-size: medium;\n}\n\n.add-task, .add-pro {\n    font-size: 1.2rem;\n    padding: 15px 32px;\n    margin: 0;\n}\n\n.btn-container {\n    display: flex;\n    justify-content: center;\n}\n\n.star-img, .remove-task-img {\n    width: 50px;\n}\n\n.remove-task-img:hover {\n    cursor: pointer;\n}\n\n.row {\n    display: flex;\n    justify-content: space-around;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n    font-family: Arial, Helvetica, sans-serif;\n}\n\n.container, .main-container {\n    display: grid;\n    grid-template-columns: 1fr 4fr;\n}\n\n.title {\n    grid-column: 2;\n}\n\n.title h1 {\n    margin-top: 100px;\n    font-size: 3.5rem;\n}\n\n.title h2 {\n    font-weight: lighter;\n    font-size: 2.5rem;\n    width: fit-content;\n    background-color: #fffdbd;\n}\n\n.new-pro, .new-task, .add-task, .add-pro {\n    background-color: transparent;\n    border: 1px solid green;\n    color: green;\n    padding: 20px 40px;\n    font-size: 1.5rem;\n    margin-top: 40px;\n}\n\n.new-pro:hover, .new-task:hover, .add-task:hover, .add-pro:hover {\n    text-decoration: underline;\n    cursor: pointer;\n}\n\n.pro-container {\n    grid-column: 2;\n    margin-top: 100px;\n    position: relative;\n}\n\n.arrow {\n    position: absolute;\n    top: 0;\n    left: -3vw;\n    margin-left: -20px;\n    width: 40px;\n    height: 60px;\n    color: black;\n}\n\n.arrow.right {\n    display: none;\n}\n\n.arrow:hover {\n    cursor: pointer;\n}\n\n.pro-container h1 {\n    text-decoration: underline;\n    width: fit-content;\n}\n\n.new-task {\n    margin: 0;\n    padding: 20px 55px;\n}\n\n.modal {\n    display: none;\n    position: fixed;\n    z-index: 1000;\n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%;\n    overflow: auto;\n    background-color: rgb(0,0,0); \n    background-color: rgba(0, 0, 0, 0.4); \n}\n\n.modal-content {\n    background-color: white;\n    margin: 15% auto;\n    padding: 20px;\n    width: max(20%, 300px);\n}\n\n.close {\n    color: #aaa;\n    float: right;\n    font-size: 28px;\n    font-weight: bold;\n}\n  \n.close:hover,\n.close:focus {\n    color: black;\n    text-decoration: none;\n    cursor: pointer;\n}\n\n.input-container, .textarea-container {\n    display: flex;\n    flex-direction: column;\n    width: fit-content;\n    padding: 10px;\n}\n\nform label {\n    font-weight: 700;\n    text-align: start;\n    font-size: medium;\n}\n\ninput {\n    font-size: medium;\n}\n\n.radio-container label:not(:first-child) {\n    font-weight: normal;\n}\n\n.radio-container {\n    padding: 10px;\n    text-align: start;\n}\n\ntextarea {\n    font-size: medium;\n}\n\n.add-task, .add-pro {\n    font-size: 1.2rem;\n    padding: 15px 32px;\n    margin: 0;\n}\n\n.btn-container {\n    display: flex;\n    justify-content: center;\n}\n\n.star-img, .remove-task-img, .remove-pro-img {\n    width: 50px;\n}\n\n.remove-task-img:hover, .remove-pro-img:hover {\n    cursor: pointer;\n}\n\n.row {\n    display: flex;\n    justify-content: space-around;\n}\n\n.remove-pro-img {\n    position: absolute;\n    right: 20px;\n    top: -50px;\n}\n\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -611,7 +611,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "table {\n    border-collapse: collapse;\n    letter-spacing: 1px;\n    font-size: 1.5rem;\n}\n\ntd, th {\n    padding: 10px 30px;\n}\n\n\ntd {\n    text-align: center;\n}\n\nthead {\n    border-bottom: 1px solid;\n}\n\ntbody {\n    font-size: 1rem;\n}\n\ntr {\n    position: relative;\n}\n\n.description {\n    text-align: start;\n}\n\n\n  ", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "table {\n    border-collapse: collapse;\n    letter-spacing: 1px;\n    font-size: 1.5rem;\n}\n\ntd, th {\n    padding: 10px 30px;\n}\n\n\ntd {\n    text-align: center;\n}\n\nthead {\n    border-bottom: 1px solid;\n    position: relative;\n}\n\ntbody {\n    font-size: 1rem;\n}\n\ntr {\n    position: relative;\n}\n\n.description {\n    text-align: start;\n}\n\n\n  ", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -783,6 +783,8 @@ function removeTaskDOM (e) {
 
     return [index, project];
 }
+
+
 
 /***/ }),
 /* 17 */
@@ -3597,6 +3599,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addTasktoProject": () => (/* binding */ addTasktoProject),
 /* harmony export */   "createProject": () => (/* binding */ createProject),
 /* harmony export */   "organizeTasks": () => (/* binding */ organizeTasks),
+/* harmony export */   "removePro": () => (/* binding */ removePro),
 /* harmony export */   "removeTask": () => (/* binding */ removeTask),
 /* harmony export */   "whichProject": () => (/* binding */ whichProject)
 /* harmony export */ });
@@ -3657,6 +3660,10 @@ function removeTask (indexProjectArray, allProjects) {
     const project = indexProjectArray[1];
 
     allProjects[project].removeTodo(index);
+}
+
+function removePro (project, allProjects) {
+    delete allProjects[project];
 }
 
 /***/ }),
@@ -3765,11 +3772,15 @@ function compareAsc(dirtyDateLeft, dirtyDateRight) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "getProjectInfo": () => (/* binding */ getProjectInfo),
+/* harmony export */   "removeProDOM": () => (/* binding */ removeProDOM),
 /* harmony export */   "showNewProject": () => (/* binding */ showNewProject)
 /* harmony export */ });
+/* harmony import */ var _images_delete_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19);
+
+
+
 function getProjectInfo () {
-    const projectName = document.getElementById('pro-name').value;
-    
+    const projectName = document.getElementById('pro-name').value; 
     return projectName;
 }
 
@@ -3781,6 +3792,13 @@ function showNewProject (info) {
 
     const title = cloneProContainer.querySelector('h1');
     title.innerText = info;
+
+    const remove = document.createElement('img');
+    remove.classList.add('remove-pro-img');
+    remove.src = _images_delete_svg__WEBPACK_IMPORTED_MODULE_0__;
+
+    const thead = cloneProContainer.querySelector('thead');
+    thead.appendChild(remove);
 
     const currentClass = cloneProContainer.className.split(' ')[1];
     const newClass = currentClass + 1;
@@ -3805,6 +3823,13 @@ function showNewProject (info) {
     right.style.display = 'none';
 
     mainContainer.appendChild(cloneProContainer);
+}
+
+function removeProDOM (e) {
+    const project = e.target.parentElement.nextElementSibling.getAttribute('data-value');
+    const content = e.target.parentElement.parentElement.parentElement.parentElement;
+    content.remove();
+    return project;    
 }
 
 /***/ }),
@@ -4131,6 +4156,11 @@ document.onclick = function (e) {
     if (e.target.className === 'remove-task-img') {
         const indexProjectArray = (0,_functions_addTaskDOM__WEBPACK_IMPORTED_MODULE_5__.removeTaskDOM)(e);
         (0,_functions_applicationLogic__WEBPACK_IMPORTED_MODULE_6__.removeTask)(indexProjectArray, allProjects);
+    }
+
+    if (e.target.className === 'remove-pro-img') {
+        const project = (0,_functions_addProjectDOM__WEBPACK_IMPORTED_MODULE_8__.removeProDOM)(e);
+        (0,_functions_applicationLogic__WEBPACK_IMPORTED_MODULE_6__.removePro)(project, allProjects);
     }
 }
 

@@ -146,11 +146,11 @@ textarea {
     justify-content: center;
 }
 
-.star-img, .remove-task-img {
+.star-img, .remove-task-img, .remove-pro-img {
     width: 50px;
 }
 
-.remove-task-img:hover {
+.remove-task-img:hover, .remove-pro-img:hover {
     cursor: pointer;
 }
 
@@ -158,3 +158,11 @@ textarea {
     display: flex;
     justify-content: space-around;
 }
+
+.remove-pro-img {
+    position: absolute;
+    right: 20px;
+    top: -50px;
+}
+
+

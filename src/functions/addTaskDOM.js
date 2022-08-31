@@ -96,3 +96,4 @@ export function removeTaskDOM (e) {
 
     return [index, project];
 }
+
