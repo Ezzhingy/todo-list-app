@@ -1,3 +1,6 @@
+import { formDate } from './setFormDateDOM';
+
+
 export function showModal (e) {
     const spans = document.querySelectorAll(".close");
     const addBtns = document.querySelectorAll('.add-task');
@@ -5,6 +8,7 @@ export function showModal (e) {
 
     if (e.target.className === 'new-task') {
         const newTask = e.target;
+        formDate();
         addTask(newTask);
     }
 

@@ -12,6 +12,7 @@ export function addTasktoProject (project, info, allProjects) {
     } else {
         tempDate[1] -= 1;
     }
+
     const date = new Date(tempDate[0], tempDate[1], tempDate[2]);
     const newTask = todo(info.taskName, date, info.prio, info.description, index);
     allProjects[project].addTodo(newTask);
@@ -23,8 +24,8 @@ export function whichProject (e) {
     return projectNum;
 }
 
-export function createProject (allProjects) {
-    const newProject = project();
+export function createProject (info, allProjects) {
+    const newProject = project(info);
     if (Object.keys(allProjects).length === 0) {
         allProjects['0'] = newProject
     } else {
@@ -57,4 +58,8 @@ export function removeTask (indexProjectArray, allProjects) {
 
 export function removePro (project, allProjects) {
     delete allProjects[project];
+}
+
+export function updateProTitle (indexValueArray, allProjects) {
+    allProjects[indexValueArray[0]].title = indexValueArray[1];
 }

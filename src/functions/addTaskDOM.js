@@ -4,6 +4,7 @@ import removeImg from '../images/delete.svg';
 
 import { format } from 'date-fns';
 
+
 export function getTaskInfo (e) {
     const parent = e.target.parentElement.parentElement;
     const taskName = parent.querySelector('#task-name').value;
@@ -47,6 +48,7 @@ export function showNewTask (arrayTasks, project) {
         td2.innerText = task.taskName;
 
         const td3 = document.createElement('td');
+
         const date = format(task.dueDate, 'MMM dd yyyy');
         td3.innerText = date;
 
@@ -89,10 +91,12 @@ export function showNewTask (arrayTasks, project) {
 
 export function removeTaskDOM (e) {
     const row = e.target.parentElement.parentElement;
+    const description = row.nextElementSibling;
     const projectBody = row.parentElement;
     const project = projectBody.getAttribute('data-value');
     const index = row.getAttribute('data-index');
-    row.innerHTML = "";
+    row.remove();
+    description.remove();
 
     return [index, project];
 }

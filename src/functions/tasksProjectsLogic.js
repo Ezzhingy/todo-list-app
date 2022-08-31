@@ -1,4 +1,4 @@
-export function project () {
+export function project (title='My First Project') {
     const allTodos = [];
 
     const addTodo = todo => {
@@ -8,15 +8,23 @@ export function project () {
         return allTodos;
     }
 
-    const removeTodo = index => {
-        allTodos.splice(index, 1);
+    const removeTodo = value => {
+        let count = 0;
+        for (let todo of allTodos) {
+            if (todo.index == value) {
+                break;
+            } else {
+                count++;
+            }
+        }
+        allTodos.splice(count, 1);
     }
 
     const numTodos = () => {
         return allTodos.length;
     }
 
-    return {addTodo, getTodo, removeTodo, numTodos};
+    return {title, addTodo, getTodo, removeTodo, numTodos};
 }
 
 export function todo (taskName, dueDate, priority, description, index) {

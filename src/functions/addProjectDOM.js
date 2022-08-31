@@ -13,6 +13,8 @@ export function showNewProject (info) {
     const cloneProContainer = proContainerNode.cloneNode(true);
 
     const title = cloneProContainer.querySelector('h1');
+    const dataTitle = +title.getAttribute('data-title') + 1;
+    title.setAttribute('data-title', dataTitle);
     title.innerText = info;
 
     const remove = document.createElement('img');
@@ -52,4 +54,10 @@ export function removeProDOM (e) {
     const content = e.target.parentElement.parentElement.parentElement.parentElement;
     content.remove();
     return project;    
+}
+
+export function getTitleDOM (e) {
+    const title = e.target.getAttribute('data-title');
+    const value = e.target.innerText;
+    return [title, value];
 }
