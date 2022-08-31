@@ -4,6 +4,8 @@ import compareAsc from 'date-fns/compareAsc';
 
 
 export function addTasktoProject (project, info, allProjects) {
+    const index = allProjects[project].numTodos();
+
     const tempDate = info.dueDate.split('-');
     if (tempDate[1] === '1') {
         tempDate[1] === '12';
@@ -11,7 +13,7 @@ export function addTasktoProject (project, info, allProjects) {
         tempDate[1] -= 1;
     }
     const date = new Date(tempDate[0], tempDate[1], tempDate[2]);
-    const newTask = todo(info.taskName, date, info.prio, info.description);
+    const newTask = todo(info.taskName, date, info.prio, info.description, index);
     allProjects[project].addTodo(newTask);
 }
 
@@ -44,4 +46,11 @@ export function organizeTasks (allProjects, project) {
             return a.priority === 'yes' ? -1 : 1;
         });
     return arrayTasks;
+}
+
+export function removeTask (indexProjectArray, allProjects) {
+    const index = indexProjectArray[0];
+    const project = indexProjectArray[1];
+
+    allProjects[project].removeTodo(index);
 }

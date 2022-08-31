@@ -539,7 +539,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n    font-family: Arial, Helvetica, sans-serif;\n}\n\n.container, .main-container {\n    display: grid;\n    grid-template-columns: 1fr 4fr;\n}\n\n.title {\n    grid-column: 2;\n}\n\n.title h1 {\n    margin-top: 100px;\n    font-size: 3.5rem;\n}\n\n.title h2 {\n    font-weight: lighter;\n    font-size: 2.5rem;\n    width: fit-content;\n    background-color: #fffdbd;\n}\n\n.new-pro, .new-task, .add-task, .add-pro {\n    background-color: transparent;\n    border: 1px solid green;\n    color: green;\n    padding: 20px 40px;\n    font-size: 1.5rem;\n    margin-top: 40px;\n}\n\n.new-pro:hover, .new-task:hover, .add-task:hover, .add-pro:hover {\n    text-decoration: underline;\n    cursor: pointer;\n}\n\n.pro-container {\n    grid-column: 2;\n    margin-top: 100px;\n    position: relative;\n}\n\n.arrow {\n    position: absolute;\n    top: 0;\n    left: -3vw;\n    margin-left: -20px;\n    width: 40px;\n    height: 60px;\n    color: black;\n}\n\n.arrow.right {\n    display: none;\n}\n\n.arrow:hover {\n    cursor: pointer;\n}\n\n.pro-container h1 {\n    text-decoration: underline;\n    width: fit-content;\n}\n\n.new-task {\n    margin: 0;\n    padding: 20px 55px;\n}\n\n.modal {\n    display: none;\n    position: fixed;\n    z-index: 1000;\n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%;\n    overflow: auto;\n    background-color: rgb(0,0,0); \n    background-color: rgba(0, 0, 0, 0.4); \n}\n\n.modal-content {\n    background-color: white;\n    margin: 15% auto;\n    padding: 20px;\n    width: max(20%, 300px);\n}\n\n\n\n.close {\n    color: #aaa;\n    float: right;\n    font-size: 28px;\n    font-weight: bold;\n}\n  \n.close:hover,\n.close:focus {\n    color: black;\n    text-decoration: none;\n    cursor: pointer;\n}\n\n.input-container, .textarea-container {\n    display: flex;\n    flex-direction: column;\n    width: fit-content;\n    padding: 10px;\n}\n\nform label {\n    font-weight: 700;\n    text-align: start;\n    font-size: medium;\n}\n\ninput {\n    font-size: medium;\n}\n\n.radio-container label:not(:first-child) {\n    font-weight: normal;\n}\n\n.radio-container {\n    padding: 10px;\n    text-align: start;\n}\n\ntextarea {\n    font-size: medium;\n}\n\n.add-task, .add-pro {\n    font-size: 1.2rem;\n    padding: 15px 32px;\n    margin: 0;\n}\n\n.btn-container {\n    display: flex;\n    justify-content: center;\n}\n\n.star-img, .remove-img {\n    width: 50px;\n}\n\n.row {\n    display: flex;\n    justify-content: space-around;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n    font-family: Arial, Helvetica, sans-serif;\n}\n\n.container, .main-container {\n    display: grid;\n    grid-template-columns: 1fr 4fr;\n}\n\n.title {\n    grid-column: 2;\n}\n\n.title h1 {\n    margin-top: 100px;\n    font-size: 3.5rem;\n}\n\n.title h2 {\n    font-weight: lighter;\n    font-size: 2.5rem;\n    width: fit-content;\n    background-color: #fffdbd;\n}\n\n.new-pro, .new-task, .add-task, .add-pro {\n    background-color: transparent;\n    border: 1px solid green;\n    color: green;\n    padding: 20px 40px;\n    font-size: 1.5rem;\n    margin-top: 40px;\n}\n\n.new-pro:hover, .new-task:hover, .add-task:hover, .add-pro:hover {\n    text-decoration: underline;\n    cursor: pointer;\n}\n\n.pro-container {\n    grid-column: 2;\n    margin-top: 100px;\n    position: relative;\n}\n\n.arrow {\n    position: absolute;\n    top: 0;\n    left: -3vw;\n    margin-left: -20px;\n    width: 40px;\n    height: 60px;\n    color: black;\n}\n\n.arrow.right {\n    display: none;\n}\n\n.arrow:hover {\n    cursor: pointer;\n}\n\n.pro-container h1 {\n    text-decoration: underline;\n    width: fit-content;\n}\n\n.new-task {\n    margin: 0;\n    padding: 20px 55px;\n}\n\n.modal {\n    display: none;\n    position: fixed;\n    z-index: 1000;\n    left: 0;\n    top: 0;\n    width: 100%;\n    height: 100%;\n    overflow: auto;\n    background-color: rgb(0,0,0); \n    background-color: rgba(0, 0, 0, 0.4); \n}\n\n.modal-content {\n    background-color: white;\n    margin: 15% auto;\n    padding: 20px;\n    width: max(20%, 300px);\n}\n\n.close {\n    color: #aaa;\n    float: right;\n    font-size: 28px;\n    font-weight: bold;\n}\n  \n.close:hover,\n.close:focus {\n    color: black;\n    text-decoration: none;\n    cursor: pointer;\n}\n\n.input-container, .textarea-container {\n    display: flex;\n    flex-direction: column;\n    width: fit-content;\n    padding: 10px;\n}\n\nform label {\n    font-weight: 700;\n    text-align: start;\n    font-size: medium;\n}\n\ninput {\n    font-size: medium;\n}\n\n.radio-container label:not(:first-child) {\n    font-weight: normal;\n}\n\n.radio-container {\n    padding: 10px;\n    text-align: start;\n}\n\ntextarea {\n    font-size: medium;\n}\n\n.add-task, .add-pro {\n    font-size: 1.2rem;\n    padding: 15px 32px;\n    margin: 0;\n}\n\n.btn-container {\n    display: flex;\n    justify-content: center;\n}\n\n.star-img, .remove-task-img {\n    width: 50px;\n}\n\n.remove-task-img:hover {\n    cursor: pointer;\n}\n\n.row {\n    display: flex;\n    justify-content: space-around;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -611,7 +611,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "table {\n    border-collapse: collapse;\n    letter-spacing: 1px;\n    font-size: 1.5rem;\n}\n\ntd, th {\n    padding: 10px 30px;\n}\n\n\ntd {\n    text-align: center;\n}\n\nthead {\n    border-bottom: 1px solid;\n}\n\ntbody {\n    font-size: 1rem;\n}\n  ", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "table {\n    border-collapse: collapse;\n    letter-spacing: 1px;\n    font-size: 1.5rem;\n}\n\ntd, th {\n    padding: 10px 30px;\n}\n\n\ntd {\n    text-align: center;\n}\n\nthead {\n    border-bottom: 1px solid;\n}\n\ntbody {\n    font-size: 1rem;\n}\n\ntr {\n    position: relative;\n}\n\n.description {\n    text-align: start;\n}\n\n\n  ", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -622,10 +622,11 @@ ___CSS_LOADER_EXPORT___.push([module.id, "table {\n    border-collapse: collapse
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "hideUnhide": () => (/* binding */ hideUnhide)
+/* harmony export */   "hideUnhidePro": () => (/* binding */ hideUnhidePro),
+/* harmony export */   "hideUnhideTask": () => (/* binding */ hideUnhideTask)
 /* harmony export */ });
-function hideUnhide (e) {
-    if (e.target.id === 'closed') {
+function hideUnhidePro (e) {
+    if (e.target.id === 'closed-a') {
         const proClass = e.target.parentElement.parentElement.className.split(' ')[1];
         const open = document.querySelector(`.${proClass} .down`);
         const closed = document.querySelector(`.${proClass} .right`);
@@ -635,7 +636,7 @@ function hideUnhide (e) {
         closed.style.display = 'none';
         proTaskbar.style.display = 'block';
 
-    } else if (e.target.id === 'open') {
+    } else if (e.target.id === 'open-a') {
         const proClass = e.target.parentElement.parentElement.className.split(' ')[1];
         const open = document.querySelector(`.${proClass} .down`);
         const closed = document.querySelector(`.${proClass} .right`);
@@ -644,10 +645,31 @@ function hideUnhide (e) {
         open.style.display = 'none';
         closed.style.display = 'block';
         proTaskbar.style.display = 'none';
-    }
+    } 
 }
 
+function hideUnhideTask (e) {
+    if (e.target.id === 'closed') {
+        const taskClass = e.target.parentElement.parentElement;
+        const open = taskClass.querySelector(`.down`);
+        const closed = taskClass.querySelector(`.right`);
+        const description = taskClass.nextElementSibling.querySelector(`.description`);
 
+        open.style.display = 'block';
+        closed.style.display = 'none';
+        description.style.display = 'block';
+
+    } else if (e.target.id === 'open') {
+        const taskClass = e.target.parentElement.parentElement;
+        const open = taskClass.querySelector(`.down`);
+        const closed = taskClass.querySelector(`.right`);
+        const description = taskClass.nextElementSibling.querySelector(`.description`);
+        
+        open.style.display = 'none';
+        closed.style.display = 'block';
+        description.style.display = 'none';
+    }
+}
 
 /***/ }),
 /* 16 */
@@ -656,6 +678,7 @@ function hideUnhide (e) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "getTaskInfo": () => (/* binding */ getTaskInfo),
+/* harmony export */   "removeTaskDOM": () => (/* binding */ removeTaskDOM),
 /* harmony export */   "showNewTask": () => (/* binding */ showNewTask)
 /* harmony export */ });
 /* harmony import */ var _images_star_fill_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(17);
@@ -689,6 +712,17 @@ function showNewTask (arrayTasks, project) {
     for (let task of arrayTasks) {
 
         const tr = document.createElement('tr');
+        tr.setAttribute('data-index', task.index);
+
+        const arrowDown = document.createElement('div');
+        arrowDown.classList.add('arrow');
+        arrowDown.classList.add('down');
+        arrowDown.innerHTML = '<i class="fa fa-angle-down fa-5x" id="open" aria-hidden="true"></i>';
+
+        const arrowRight = document.createElement('div');
+        arrowRight.classList.add('arrow');
+        arrowRight.classList.add('right');
+        arrowRight.innerHTML = '<i class="fa fa-angle-right fa-5x" id="closed" aria-hidden="true"></i>';
 
         const td1 = document.createElement('td');
         const checkBox = document.createElement('input');
@@ -715,7 +749,7 @@ function showNewTask (arrayTasks, project) {
 
         const td5 = document.createElement('td');
         const remove = document.createElement('img');
-        remove.classList.add('remove-img');
+        remove.classList.add('remove-task-img');
         remove.src = _images_delete_svg__WEBPACK_IMPORTED_MODULE_2__;
         td5.appendChild(remove);
 
@@ -724,10 +758,30 @@ function showNewTask (arrayTasks, project) {
         tr.appendChild(td4);
         tr.appendChild(td5);
         tr.appendChild(td1);
-        content.appendChild(tr);
+
+        const descriptionContainer = document.createElement('tr');
+        descriptionContainer;
+        const description = document.createElement('td');
+        description.colSpan = '5';
+        description.classList.add('description');
+        description.innerText = task.description;
+        descriptionContainer.appendChild(description);
         
-        // row.appendChild(descriptionContainer);
+        tr.appendChild(arrowDown);
+        tr.appendChild(arrowRight);
+        content.appendChild(tr);
+        content.appendChild(descriptionContainer);
     }
+}
+
+function removeTaskDOM (e) {
+    const row = e.target.parentElement.parentElement;
+    const projectBody = row.parentElement;
+    const project = projectBody.getAttribute('data-value');
+    const index = row.getAttribute('data-index');
+    row.innerHTML = "";
+
+    return [index, project];
 }
 
 /***/ }),
@@ -3543,6 +3597,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addTasktoProject": () => (/* binding */ addTasktoProject),
 /* harmony export */   "createProject": () => (/* binding */ createProject),
 /* harmony export */   "organizeTasks": () => (/* binding */ organizeTasks),
+/* harmony export */   "removeTask": () => (/* binding */ removeTask),
 /* harmony export */   "whichProject": () => (/* binding */ whichProject)
 /* harmony export */ });
 /* harmony import */ var _tasksProjectsLogic__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(56);
@@ -3553,6 +3608,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function addTasktoProject (project, info, allProjects) {
+    const index = allProjects[project].numTodos();
+
     const tempDate = info.dueDate.split('-');
     if (tempDate[1] === '1') {
         tempDate[1] === '12';
@@ -3560,7 +3617,7 @@ function addTasktoProject (project, info, allProjects) {
         tempDate[1] -= 1;
     }
     const date = new Date(tempDate[0], tempDate[1], tempDate[2]);
-    const newTask = (0,_tasksProjectsLogic__WEBPACK_IMPORTED_MODULE_0__.todo)(info.taskName, date, info.prio, info.description);
+    const newTask = (0,_tasksProjectsLogic__WEBPACK_IMPORTED_MODULE_0__.todo)(info.taskName, date, info.prio, info.description, index);
     allProjects[project].addTodo(newTask);
 }
 
@@ -3595,6 +3652,13 @@ function organizeTasks (allProjects, project) {
     return arrayTasks;
 }
 
+function removeTask (indexProjectArray, allProjects) {
+    const index = indexProjectArray[0];
+    const project = indexProjectArray[1];
+
+    allProjects[project].removeTodo(index);
+}
+
 /***/ }),
 /* 56 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -3606,17 +3670,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function project () {
     const allTodos = [];
+
     const addTodo = todo => {
         allTodos.push(todo);
     }
     const getTodo = () => {
         return allTodos;
     }
-    return {addTodo, getTodo};
+
+    const removeTodo = index => {
+        allTodos.splice(index, 1);
+    }
+
+    const numTodos = () => {
+        return allTodos.length;
+    }
+
+    return {addTodo, getTodo, removeTodo, numTodos};
 }
 
-function todo (taskName, dueDate, priority, description) {
-    return {taskName, dueDate, priority, description};
+function todo (taskName, dueDate, priority, description, index) {
+    return {taskName, 
+            dueDate, 
+            priority, 
+            description,
+            index
+    };
 }
 
 /***/ }),
@@ -3823,6 +3902,78 @@ function formDate () {
     });
 }
 
+/***/ }),
+/* 61 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_checkbox_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(62);
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_checkbox_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_checkbox_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_checkbox_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_checkbox_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+/* 62 */
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "input[type=\"checkbox\"] {\n    -webkit-appearance: none;\n    appearance: none;\n    background-color: #fff;\n    margin-left: 50%;\n    font: inherit;\n    color: currentColor;\n    width: 1.15em;\n    height: 1.15em;\n    border: 0.15em solid currentColor;\n    border-radius: 0.15em;\n    transform: translateY(-0.075em);\n    display: grid;\n    justify-items: center;\n    \n}\n\ninput[type=\"checkbox\"]::before {\n    content: \"\";\n    width: 0.65em;\n    height: 0.65em;\n    transform: scale(0);\n    transition: 120ms transform ease-in-out;\n    box-shadow: inset 1em 1em var(--form-control-color);\n}\n\ninput[type=\"checkbox\"]:checked::before {\n    transform: scale(1);\n    background-color: green;\n    transform-origin: bottom left;\n    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);\n}\n\ninput[type=\"checkbox\"]:hover {\n    cursor: pointer;\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -3936,13 +4087,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_normalize_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
 /* harmony import */ var _styles_table_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13);
-/* harmony import */ var _functions_hideUnhideArrowsDOM__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(15);
-/* harmony import */ var _functions_addTaskDOM__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(16);
-/* harmony import */ var _functions_applicationLogic__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(55);
-/* harmony import */ var _functions_tasksProjectsLogic__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(56);
-/* harmony import */ var _functions_addProjectDOM__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(58);
-/* harmony import */ var _functions_addModalDOM__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(59);
-/* harmony import */ var _functions_setFormDateDOM__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(60);
+/* harmony import */ var _styles_checkbox_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(61);
+/* harmony import */ var _functions_hideUnhideArrowsDOM__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(15);
+/* harmony import */ var _functions_addTaskDOM__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(16);
+/* harmony import */ var _functions_applicationLogic__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(55);
+/* harmony import */ var _functions_tasksProjectsLogic__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(56);
+/* harmony import */ var _functions_addProjectDOM__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(58);
+/* harmony import */ var _functions_addModalDOM__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(59);
+/* harmony import */ var _functions_setFormDateDOM__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(60);
 
 
 
@@ -3955,34 +4107,42 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const allProjects = {0:(0,_functions_tasksProjectsLogic__WEBPACK_IMPORTED_MODULE_6__.project)()};
+
+const allProjects = {0:(0,_functions_tasksProjectsLogic__WEBPACK_IMPORTED_MODULE_7__.project)()};
 
 document.onclick = function (e) {
-    (0,_functions_hideUnhideArrowsDOM__WEBPACK_IMPORTED_MODULE_3__.hideUnhide)(e);
-    (0,_functions_addModalDOM__WEBPACK_IMPORTED_MODULE_8__.showModal)(e);
-    (0,_functions_setFormDateDOM__WEBPACK_IMPORTED_MODULE_9__.formDate)();
+    (0,_functions_hideUnhideArrowsDOM__WEBPACK_IMPORTED_MODULE_4__.hideUnhidePro)(e);
+    (0,_functions_hideUnhideArrowsDOM__WEBPACK_IMPORTED_MODULE_4__.hideUnhideTask)(e);
+    (0,_functions_addModalDOM__WEBPACK_IMPORTED_MODULE_9__.showModal)(e);
+    (0,_functions_setFormDateDOM__WEBPACK_IMPORTED_MODULE_10__.formDate)();
 
     if (e.target.className === 'add-task') {
-        const project = (0,_functions_applicationLogic__WEBPACK_IMPORTED_MODULE_5__.whichProject)(e);
-        const info = (0,_functions_addTaskDOM__WEBPACK_IMPORTED_MODULE_4__.getTaskInfo)(e);
-        (0,_functions_applicationLogic__WEBPACK_IMPORTED_MODULE_5__.addTasktoProject)(project, info, allProjects);
-        const arrayTasks = (0,_functions_applicationLogic__WEBPACK_IMPORTED_MODULE_5__.organizeTasks)(allProjects, project);
-        (0,_functions_addTaskDOM__WEBPACK_IMPORTED_MODULE_4__.showNewTask)(arrayTasks, project);
+        const project = (0,_functions_applicationLogic__WEBPACK_IMPORTED_MODULE_6__.whichProject)(e);
+        const info = (0,_functions_addTaskDOM__WEBPACK_IMPORTED_MODULE_5__.getTaskInfo)(e);
+        (0,_functions_applicationLogic__WEBPACK_IMPORTED_MODULE_6__.addTasktoProject)(project, info, allProjects);
+        const arrayTasks = (0,_functions_applicationLogic__WEBPACK_IMPORTED_MODULE_6__.organizeTasks)(allProjects, project);
+        (0,_functions_addTaskDOM__WEBPACK_IMPORTED_MODULE_5__.showNewTask)(arrayTasks, project);
 
         document.querySelectorAll('.task-form').forEach(task => {
             task.reset();
         });
     }
+
+    if (e.target.className === 'remove-task-img') {
+        const indexProjectArray = (0,_functions_addTaskDOM__WEBPACK_IMPORTED_MODULE_5__.removeTaskDOM)(e);
+        (0,_functions_applicationLogic__WEBPACK_IMPORTED_MODULE_6__.removeTask)(indexProjectArray, allProjects);
+    }
 }
 
 const addProjectBtn = document.querySelector('.add-pro');
 addProjectBtn.onclick = function () {
-    (0,_functions_applicationLogic__WEBPACK_IMPORTED_MODULE_5__.createProject)(allProjects);
-    const info = (0,_functions_addProjectDOM__WEBPACK_IMPORTED_MODULE_7__.getProjectInfo)();
-    (0,_functions_addProjectDOM__WEBPACK_IMPORTED_MODULE_7__.showNewProject)(info);
+    (0,_functions_applicationLogic__WEBPACK_IMPORTED_MODULE_6__.createProject)(allProjects);
+    const info = (0,_functions_addProjectDOM__WEBPACK_IMPORTED_MODULE_8__.getProjectInfo)();
+    (0,_functions_addProjectDOM__WEBPACK_IMPORTED_MODULE_8__.showNewProject)(info);
 
     document.querySelector(".add-form").reset();
 }
+
 
 
 })();

@@ -1,10 +1,11 @@
 import './styles/normalize.css';
 import './styles/styles.css';
 import './styles/table.css';
+import './styles/checkbox.css';
 
-import { hideUnhide } from './functions/hideUnhideArrowsDOM';
-import { getTaskInfo, showNewTask } from './functions/addTaskDOM';
-import { addTasktoProject, whichProject, createProject, organizeTasks } from './functions/applicationLogic'
+import { hideUnhidePro, hideUnhideTask } from './functions/hideUnhideArrowsDOM';
+import { getTaskInfo, showNewTask, removeTaskDOM } from './functions/addTaskDOM';
+import { addTasktoProject, whichProject, createProject, organizeTasks, removeTask } from './functions/applicationLogic'
 import { project } from './functions/tasksProjectsLogic';
 import { getProjectInfo, showNewProject } from './functions/addProjectDOM';
 import { showModal } from './functions/addModalDOM';
@@ -13,7 +14,8 @@ import { formDate } from './functions/setFormDateDOM';
 const allProjects = {0:project()};
 
 document.onclick = function (e) {
-    hideUnhide(e);
+    hideUnhidePro(e);
+    hideUnhideTask(e);
     showModal(e);
     formDate();
 
@@ -28,6 +30,11 @@ document.onclick = function (e) {
             task.reset();
         });
     }
+
+    if (e.target.className === 'remove-task-img') {
+        const indexProjectArray = removeTaskDOM(e);
+        removeTask(indexProjectArray, allProjects);
+    }
 }
 
 const addProjectBtn = document.querySelector('.add-pro');
@@ -38,4 +45,5 @@ addProjectBtn.onclick = function () {
 
     document.querySelector(".add-form").reset();
 }
+
 

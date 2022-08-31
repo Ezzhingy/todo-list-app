@@ -91,8 +91,6 @@ body {
     width: max(20%, 300px);
 }
 
-
-
 .close {
     color: #aaa;
     float: right;
@@ -148,8 +146,12 @@ textarea {
     justify-content: center;
 }
 
-.star-img, .remove-img {
+.star-img, .remove-task-img {
     width: 50px;
+}
+
+.remove-task-img:hover {
+    cursor: pointer;
 }
 
 .row {

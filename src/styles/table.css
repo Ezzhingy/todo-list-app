@@ -20,4 +20,14 @@ thead {
 tbody {
     font-size: 1rem;
 }
+
+tr {
+    position: relative;
+}
+
+.description {
+    text-align: start;
+}
+
+
   

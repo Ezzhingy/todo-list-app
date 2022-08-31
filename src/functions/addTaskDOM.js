@@ -25,6 +25,17 @@ export function showNewTask (arrayTasks, project) {
     for (let task of arrayTasks) {
 
         const tr = document.createElement('tr');
+        tr.setAttribute('data-index', task.index);
+
+        const arrowDown = document.createElement('div');
+        arrowDown.classList.add('arrow');
+        arrowDown.classList.add('down');
+        arrowDown.innerHTML = '<i class="fa fa-angle-down fa-5x" id="open" aria-hidden="true"></i>';
+
+        const arrowRight = document.createElement('div');
+        arrowRight.classList.add('arrow');
+        arrowRight.classList.add('right');
+        arrowRight.innerHTML = '<i class="fa fa-angle-right fa-5x" id="closed" aria-hidden="true"></i>';
 
         const td1 = document.createElement('td');
         const checkBox = document.createElement('input');
@@ -51,7 +62,7 @@ export function showNewTask (arrayTasks, project) {
 
         const td5 = document.createElement('td');
         const remove = document.createElement('img');
-        remove.classList.add('remove-img');
+        remove.classList.add('remove-task-img');
         remove.src = removeImg;
         td5.appendChild(remove);
 
@@ -60,8 +71,28 @@ export function showNewTask (arrayTasks, project) {
         tr.appendChild(td4);
         tr.appendChild(td5);
         tr.appendChild(td1);
-        content.appendChild(tr);
+
+        const descriptionContainer = document.createElement('tr');
+        descriptionContainer;
+        const description = document.createElement('td');
+        description.colSpan = '5';
+        description.classList.add('description');
+        description.innerText = task.description;
+        descriptionContainer.appendChild(description);
         
-        // row.appendChild(descriptionContainer);
+        tr.appendChild(arrowDown);
+        tr.appendChild(arrowRight);
+        content.appendChild(tr);
+        content.appendChild(descriptionContainer);
     }
+}
+
+export function removeTaskDOM (e) {
+    const row = e.target.parentElement.parentElement;
+    const projectBody = row.parentElement;
+    const project = projectBody.getAttribute('data-value');
+    const index = row.getAttribute('data-index');
+    row.innerHTML = "";
+
+    return [index, project];
 }
