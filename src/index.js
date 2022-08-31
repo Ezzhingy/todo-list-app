@@ -1,23 +1,32 @@
 import './styles/normalize.css';
 import './styles/styles.css';
+import './styles/table.css';
 
 import { hideUnhide } from './functions/hideUnhideArrowsDOM';
-import { showModal, getTaskInfo, getProjectInfo, showNewTask } from './functions/addTaskDOM';
-import { addTasktoProject, whichProject, createProject } from './functions/applicationLogic'
+import { getTaskInfo, showNewTask } from './functions/addTaskDOM';
+import { addTasktoProject, whichProject, createProject, organizeTasks } from './functions/applicationLogic'
 import { project } from './functions/tasksProjectsLogic';
-import { showNewProject } from './functions/addProjectDOM';
+import { getProjectInfo, showNewProject } from './functions/addProjectDOM';
+import { showModal } from './functions/addModalDOM';
+import { formDate } from './functions/setFormDateDOM';
 
 const allProjects = {0:project()};
 
 document.onclick = function (e) {
     hideUnhide(e);
     showModal(e);
+    formDate();
 
     if (e.target.className === 'add-task') {
         const project = whichProject(e);
         const info = getTaskInfo(e);
         addTasktoProject(project, info, allProjects);
-        showNewTask(allProjects);
+        const arrayTasks = organizeTasks(allProjects, project);
+        showNewTask(arrayTasks, project);
+
+        document.querySelectorAll('.task-form').forEach(task => {
+            task.reset();
+        });
     }
 }
 

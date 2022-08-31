@@ -35,52 +35,56 @@
             <div class="arrow down"><i class="fa fa-angle-down fa-5x" id="open" aria-hidden="true"></i></div>
             <div class="arrow right"><i class="fa fa-angle-right fa-5x" id="closed" aria-hidden="true"></i></div>
             <div class="pro-taskbar">
-                <div class="taskbar">
-                    <h2>Task Name</h2>
-                    <h2>Due Date</h2>
-                    <h2>Priority</h2>
-                    <h2>Remove</h2>
-                    <button class="new-task">Add Task</button>
-                    <div class="modal" id="modal-task">
-                        <div class="modal-content">
-                            <span class="close">&times;</span>
-                            <form class="task-form">
-
-                                <div class="input-container">
-                                    <label for="task-name">Task Name</label>
-                                    <input type="text" id="task-name" name="task-name">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Task Name</th>
+                            <th>Due Date</th>
+                            <th>Priority</th>
+                            <th>Remove</th>
+                            <th>
+                                <button class="new-task">Add Task</button>
+                                <div class="modal" id="modal-task">
+                                    <div class="modal-content">
+                                        <span class="close">&times;</span>
+                                        <form class="task-form">
+                
+                                            <div class="input-container">
+                                                <label for="task-name">Task Name</label>
+                                                <input type="text" id="task-name" name="task-name">
+                                            </div>
+                
+                                            <div class="input-container">
+                                                <label for="due-date">Due Date</label>
+                                                <input type="date" id="due-date" name="due-date">
+                                            </div>
+                
+                                            <div class="radio-container">
+                                                <label>Priority</label>
+                
+                                                <label for="yes">Yes</label>
+                                                <input type="radio" id="yes" name="prio" value="yes">
+                
+                                                <label for="no">No</label>
+                                                <input type="radio" id="no" name="prio" value="no" checked>
+                                            </div>
+                
+                                            <div class="textarea-container">
+                                                <label for="description">Description</label>
+                                                <textarea id="description" name="description" rows="5" cols="40"></textarea>
+                                            </div>
+                
+                                            <div class="btn-container">
+                                                <button data-key='0' class="add-task" type="button">Add Task</button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
-
-                                <div class="input-container">
-                                    <label for="due-date">Due Date</label>
-                                    <input type="date" id="due-date" name="due-date">
-                                </div>
-
-                                <div class="radio-container">
-                                    <label>Priority</label>
-
-                                    <label for="yes">Yes</label>
-                                    <input type="radio" id="yes" name="prio" value="yes">
-
-                                    <label for="no">No</label>
-                                    <input type="radio" id="no" name="prio" value="no" checked>
-                                </div>
-
-                                <div class="textarea-container">
-                                    <label for="description">Description</label>
-                                    <textarea id="description" name="description" rows="5" cols="40"></textarea>
-                                </div>
-
-                                <div class="btn-container">
-                                    <button data-key='0' class="add-task" type="button">Add Task</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-            </div>
-            <div class="pro-content">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="pro-content" data-value="0"></tbody>
+                </table>
             </div>
         </div>
     </div>

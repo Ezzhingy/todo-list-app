@@ -61,18 +61,9 @@ body {
     cursor: pointer;
 }
 
-.pro-container {
-    width: 70%;
-}
-
 .pro-container h1 {
     text-decoration: underline;
     width: fit-content;
-}
-
-.taskbar {
-    display: flex;
-    justify-content: space-around;
 }
 
 .new-task {
@@ -83,6 +74,7 @@ body {
 .modal {
     display: none;
     position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
@@ -98,6 +90,8 @@ body {
     padding: 20px;
     width: max(20%, 300px);
 }
+
+
 
 .close {
     color: #aaa;
@@ -122,6 +116,12 @@ body {
 
 form label {
     font-weight: 700;
+    text-align: start;
+    font-size: medium;
+}
+
+input {
+    font-size: medium;
 }
 
 .radio-container label:not(:first-child) {
@@ -130,6 +130,11 @@ form label {
 
 .radio-container {
     padding: 10px;
+    text-align: start;
+}
+
+textarea {
+    font-size: medium;
 }
 
 .add-task, .add-pro {
@@ -141,4 +146,13 @@ form label {
 .btn-container {
     display: flex;
     justify-content: center;
+}
+
+.star-img, .remove-img {
+    width: 50px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
 }

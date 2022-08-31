@@ -1,3 +1,9 @@
+export function getProjectInfo () {
+    const projectName = document.getElementById('pro-name').value;
+    
+    return projectName;
+}
+
 export function showNewProject (info) {
     const mainContainer = document.querySelector('.main-container');
 
@@ -15,6 +21,10 @@ export function showNewProject (info) {
     const newData = +addTaskFake.getAttribute('data-key') + 1;
     addTaskFake.setAttribute('data-key', newData);
 
+    const content = cloneProContainer.querySelector('.pro-content');
+    const newValue = +content.getAttribute('data-value') + 1;
+    content.setAttribute('data-value', newValue);
+
     const proContent = cloneProContainer.querySelector('.pro-content');
     proContent.innerHTML = '';
 
@@ -26,6 +36,4 @@ export function showNewProject (info) {
     right.style.display = 'none';
 
     mainContainer.appendChild(cloneProContainer);
-
-
 }

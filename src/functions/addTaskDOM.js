@@ -1,59 +1,8 @@
-export function showModal (e) {
-    const spans = document.querySelectorAll(".close");
-    const addBtns = document.querySelectorAll('.add-task');
-    const addProjectBtn = document.querySelector('.add-pro');
+import starFill from '../images/star-fill.svg';
+import starOutline from '../images/star-outline.svg';
+import removeImg from '../images/delete.svg';
 
-    if (e.target.className === 'new-task') {
-        const newTask = e.target;
-        addTask(newTask);
-    }
-
-    const newProject = document.querySelector('.new-pro');
-    newProject.addEventListener('click', addProject);
-
-    spans.forEach(span => {
-        span.addEventListener('click', closeModal);
-    });
-    addBtns.forEach(addBtn => {
-        addBtn.addEventListener('click', closeModal);
-    });
-    addProjectBtn.addEventListener('click', closeModal);
-    window.addEventListener('click', closeModalW);
-}
-
-function closeModalW (e) {
-    const modals = document.querySelectorAll('.modal');
-    modals.forEach(modal => {
-        if (e.target === modal) {
-            const body = document.querySelector('body');
-            modal.style.display = 'none';
-            body.style.overflow = 'auto';
-        }
-    });
-}
-
-function closeModal () {
-    const body = document.querySelector('body');
-    const modals = document.querySelectorAll('.modal');
-    modals.forEach(modal => {
-        modal.style.display = 'none';
-        body.style.overflow = 'auto';
-    });
-}
-
-function addTask (newTask) {
-    const body = document.querySelector('body');
-    const modal = newTask.nextElementSibling;
-    modal.style.display = 'block';
-    body.style.overflow = 'hidden';
-}
-
-function addProject () {
-    const body = document.querySelector('body');
-    const modal = document.querySelector('#modal-pro');
-    modal.style.display = 'block';
-    body.style.overflow = 'hidden';
-}
+import { format } from 'date-fns';
 
 export function getTaskInfo (e) {
     const parent = e.target.parentElement.parentElement;
@@ -62,8 +11,6 @@ export function getTaskInfo (e) {
     const prio = parent.querySelector('input[name="prio"]:checked').value;
     const description = parent.querySelector('#description').value;
 
-    parent.reset();
-
     return {'taskName':taskName, 
             'dueDate':dueDate,
             'prio':prio,
@@ -71,12 +18,50 @@ export function getTaskInfo (e) {
     };
 }
 
-export function getProjectInfo () {
-    const projectName = document.getElementById('pro-name').value;
-    
-    return projectName;
-}
+export function showNewTask (arrayTasks, project) {
+    const content = document.querySelector(`[data-value="${project}"]`);
+    content.innerHTML = '';
 
-export function showNewTask (allProjects) {
+    for (let task of arrayTasks) {
+
+        const tr = document.createElement('tr');
+
+        const td1 = document.createElement('td');
+        const checkBox = document.createElement('input');
+        checkBox.type = 'checkbox';
+        checkBox.classList.add('check');
+        td1.appendChild(checkBox);
     
+        const td2 = document.createElement('td');
+        td2.innerText = task.taskName;
+
+        const td3 = document.createElement('td');
+        const date = format(task.dueDate, 'MMM dd yyyy');
+        td3.innerText = date;
+
+        const td4 = document.createElement('td');
+        const priority = document.createElement('img');
+        priority.classList.add('star-img');
+        if (task.priority === 'yes') {
+            priority.src = starFill;
+        } else {
+            priority.src = starOutline;
+        }
+        td4.appendChild(priority);
+
+        const td5 = document.createElement('td');
+        const remove = document.createElement('img');
+        remove.classList.add('remove-img');
+        remove.src = removeImg;
+        td5.appendChild(remove);
+
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        tr.appendChild(td4);
+        tr.appendChild(td5);
+        tr.appendChild(td1);
+        content.appendChild(tr);
+        
+        // row.appendChild(descriptionContainer);
+    }
 }
