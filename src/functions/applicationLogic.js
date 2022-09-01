@@ -33,7 +33,6 @@ export function createProject (info, allProjects) {
         const newkey = +lastKey + 1;
         allProjects[newkey] = newProject;
     }
-
     return allProjects;
 }
 

@@ -1,5 +1,3 @@
-// import { format, endOfToday} from 'date-fns/endOfToday';
-
 export function formDate () {
     const dates = document.querySelectorAll('#due-date');
 

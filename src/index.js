@@ -20,12 +20,12 @@ const data = retrieveStorage();
 if (data) {
     allProjects = {};
     const allTitles = retrieveTitles().split(',');
-    let count = 0;
+    let count = 0; // used to number project order
     for (let [index, arrayTasks] of Object.entries(data)) {
-        const pro = project(allTitles[count]);
+        const pro = project(allTitles[count]); // instantiate saved project
         
         for (let t of arrayTasks) {
-            const tempDate = t.dueDate.slice(0,10).split('-');
+            const tempDate = t.dueDate.slice(0,10).split('-'); // since objects cannot be transferred with localStorage, have to recreate date
             if (tempDate[1] === '1') {
                 tempDate[1] === '12';
             } else {
@@ -38,9 +38,9 @@ if (data) {
         }
 
         allProjects[count] = pro;
-        count++;
+        count++; 
 
-        const sortedTasks = arrayTasks.sort(
+        const sortedTasks = arrayTasks.sort( // to display tasks in proper order
             function(a, b) {
                 if (a.priority === b.priority) {
                     return compareAsc(a.dueDate, b.dueDate);
@@ -49,10 +49,10 @@ if (data) {
             }
         );
         if (index !== '0') {
-            showNewProject(pro.title)
+            showNewProject(pro.title) // show saved project
         }
 
-        showNewTask(sortedTasks, index);
+        showNewTask(sortedTasks, index); // show tasks for saved project
     }
 }
 
