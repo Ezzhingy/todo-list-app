@@ -3717,7 +3717,6 @@ function createProject (info, allProjects) {
         const newkey = +lastKey + 1;
         allProjects[newkey] = newProject;
     }
-
     return allProjects;
 }
 
@@ -4010,8 +4009,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "formDate": () => (/* binding */ formDate)
 /* harmony export */ });
-// import { format, endOfToday} from 'date-fns/endOfToday';
-
 function formDate () {
     const dates = document.querySelectorAll('#due-date');
 
@@ -4209,12 +4206,12 @@ const data = (0,_functions_storage__WEBPACK_IMPORTED_MODULE_10__.retrieveStorage
 if (data) {
     allProjects = {};
     const allTitles = (0,_functions_storage__WEBPACK_IMPORTED_MODULE_10__.retrieveTitles)().split(',');
-    let count = 0;
+    let count = 0; // used to number project order
     for (let [index, arrayTasks] of Object.entries(data)) {
-        const pro = (0,_functions_tasksProjectsLogic__WEBPACK_IMPORTED_MODULE_7__.project)(allTitles[count]);
+        const pro = (0,_functions_tasksProjectsLogic__WEBPACK_IMPORTED_MODULE_7__.project)(allTitles[count]); // instantiate saved project
         
         for (let t of arrayTasks) {
-            const tempDate = t.dueDate.slice(0,10).split('-');
+            const tempDate = t.dueDate.slice(0,10).split('-'); // since objects cannot be transferred with localStorage, have to recreate date
             if (tempDate[1] === '1') {
                 tempDate[1] === '12';
             } else {
@@ -4227,9 +4224,9 @@ if (data) {
         }
 
         allProjects[count] = pro;
-        count++;
+        count++; 
 
-        const sortedTasks = arrayTasks.sort(
+        const sortedTasks = arrayTasks.sort( // to display tasks in proper order
             function(a, b) {
                 if (a.priority === b.priority) {
                     return (0,date_fns_compareAsc__WEBPACK_IMPORTED_MODULE_11__["default"])(a.dueDate, b.dueDate);
@@ -4238,10 +4235,10 @@ if (data) {
             }
         );
         if (index !== '0') {
-            (0,_functions_addProjectDOM__WEBPACK_IMPORTED_MODULE_8__.showNewProject)(pro.title)
+            (0,_functions_addProjectDOM__WEBPACK_IMPORTED_MODULE_8__.showNewProject)(pro.title) // show saved project
         }
 
-        (0,_functions_addTaskDOM__WEBPACK_IMPORTED_MODULE_5__.showNewTask)(sortedTasks, index);
+        (0,_functions_addTaskDOM__WEBPACK_IMPORTED_MODULE_5__.showNewTask)(sortedTasks, index); // show tasks for saved project
     }
 }
 
