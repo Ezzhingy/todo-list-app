@@ -1,0 +1,32 @@
+:root {
+    --lightest-green: #CFF7DE;
+    --light-green: #A7EAC9;
+    --medium-green: #7DD3B5;
+    --dark-green: #57B59C;
+    --constant-space: 40px;
+}
+
+.project-form {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    padding: 10px;
+}
+
+.project-form input {
+    background: var(--light-green);
+}
+
+.projectmodal-btn {
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 20px 0 0 0 !important;
+    margin: var(--constant-space);
+}
+
+.projectmodal-btn:hover {
+    cursor: pointer;
+    background-color: var(--light-green);
+}

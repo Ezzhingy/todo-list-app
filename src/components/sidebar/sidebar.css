@@ -1,0 +1,27 @@
+:root {
+    --lightest-green: #CFF7DE;
+    --light-green: #A7EAC9;
+    --medium-green: #7DD3B5;
+    --dark-green: #57B59C;
+    --constant-space: 40px;
+}
+
+.sidebar-grid {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(30px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    padding: 10px 50px;
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    margin: var(--constant-space);
+    margin-top: auto;
+}
+
+.project-card:hover {
+    cursor: pointer;
+    background-color: var(--light-green);
+}

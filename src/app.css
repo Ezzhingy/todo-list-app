@@ -1,0 +1,107 @@
+:root {
+    --lightest-green: #CFF7DE;
+    --light-green: #A7EAC9;
+    --medium-green: #7DD3B5;
+    --dark-green: #57B59C;
+    --constant-space: 40px;
+}
+
+.body-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 4fr;
+    min-height: 100vh;
+}
+
+.sidebar-container {
+    background-color: var(--lightest-green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-container h1 {
+    margin-bottom: 60px;
+}
+
+.sidebar-container .add-project-btn {
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    margin: var(--constant-space);
+    margin-top: auto;
+}
+
+.sidebar-container .add-project-btn:hover {
+    cursor: pointer;
+    background-color: var(--light-green);
+}
+
+.main-container {
+    background-color: var(--medium-green);
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container .add-task-btn {
+    padding: 10px;
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    margin: var(--constant-space);
+    margin-top: auto;
+}
+
+.main-container .add-task-btn:hover {
+    cursor: pointer;
+    background-color: var(--light-green);
+}
+
+/* Modal Logic,  https://upmostly.com/tutorials/modal-components-react-custom-hooks*/
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    opacity: .5;
+}
+  
+.modal-wrapper {
+    position: fixed;
+    top: 40%;
+    left: 0;
+    z-index: 1050;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+  
+.modal {
+    z-index: 100;
+    background: var(--lightest-green);
+    position: relative;
+    margin: 1.75rem auto;
+    border-radius: 8px;
+    max-width: 500px;
+    padding: 1rem;
+}
+  
+.modal-header {
+    display: flex;
+    justify-content: flex-end;
+}
+  
+.modal-close-button {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    opacity: .3;
+    cursor: pointer;
+    border: none;
+}
+/* End of Modal Logic */
