@@ -14,7 +14,8 @@ const Modal = ({ isShowing, hide }) => {
         const newProject = project(inputProject.value);
         allProjects.projectObj[inputProject.value] = newProject;
         inputProject.value = '';
-        console.log(allProjects.projectObj);
+        hide();
+        // console.log(allProjects.projectObj);
     }
 
     if (isShowing) {
