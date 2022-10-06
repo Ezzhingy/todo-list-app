@@ -7,3 +7,11 @@ export function project (title) {
 export class allProjects {
     static projectObj = {};
 }
+
+export function task (title, date, priority, description) {
+    return {title, date, priority, description};
+}
+
+export class allTasks {
+    static allTasksArray = [];
+}

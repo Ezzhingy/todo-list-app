@@ -1,16 +1,29 @@
 import { useState } from 'react';
 
-const useModal = () => {
-  const [isShowing, setIsShowing] = useState(false);
+const useModalProject = () => {
+  const [isShowingProject, setIsShowing] = useState(false);
 
-  function toggle() {
-    setIsShowing(!isShowing);
+  function toggleProject() {
+    setIsShowing(!isShowingProject);
   }
 
   return {
-    isShowing,
-    toggle,
+    isShowingProject,
+    toggleProject,
   }
 };
 
-export default useModal;
+const useModalTask = () => {
+  const [isShowingTask, setIsShowing] = useState(false);
+
+  function toggleTask() {
+    setIsShowing(!isShowingTask);
+  }
+
+  return {
+    isShowingTask,
+    toggleTask,
+  }
+};
+
+export { useModalProject, useModalTask };

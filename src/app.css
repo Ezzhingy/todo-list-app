@@ -44,6 +44,7 @@
 }
 
 .main-container .add-task-btn {
+    display: none;
     padding: 10px;
     font-size: 1.5rem;
     background-color: transparent;
@@ -105,3 +106,11 @@
     border: none;
 }
 /* End of Modal Logic */
+
+.title {
+    text-align: center;
+    font-weight: normal;
+    font-size: 1.5rem;
+    margin-top: 25px;
+
+}
