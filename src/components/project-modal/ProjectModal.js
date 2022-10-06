@@ -5,6 +5,8 @@ import './project-modal.css';
 import { project, task, allProjects } from '../../functions/factory';
 import { allTasks } from '../../functions/factory';
 
+import compareAsc from 'date-fns/compareAsc';
+
 
 const ProjectModal = ({ isShowing, hide }) => {
     
@@ -15,7 +17,6 @@ const ProjectModal = ({ isShowing, hide }) => {
         allProjects.projectObj[inputProject.value] = newProject;
         inputProject.value = '';
         hide();
-        // console.log(allProjects.projectObj);
     }
 
     if (isShowing) {
@@ -46,6 +47,16 @@ const ProjectModal = ({ isShowing, hide }) => {
 
 const TaskModal = ({ isShowing, hide }) => {
     
+    function organizeTasks (project) {
+        allProjects.projectObj[project].taskArray.sort(
+            function(a, b) {
+                if (a.priority === b.priority) {
+                    return compareAsc(a.date, b.date);
+                }
+                return a.priority === 'yes' ? -1 : 1;
+            });
+    }
+
     function submitTask (e) {
         e.preventDefault();
 
@@ -56,8 +67,18 @@ const TaskModal = ({ isShowing, hide }) => {
         const priority = document.querySelector('input[name="priority"]:checked').value;
         const description = document.getElementById('description');
 
-        const currentTask = task(inputTask.value, inputDate.value, priority, description.value);
+        let tempDate = inputDate.value.split('-');
+        if (tempDate[1] === '1') {
+            tempDate[1] = '12';
+        } else {
+            tempDate[1] -= 1;
+        }
+    
+        const date = new Date(tempDate[0], tempDate[1], tempDate[2]);
+
+        const currentTask = task(inputTask.value, date, priority, description.value);
         allProjects.projectObj[currentProject].taskArray.push(currentTask);
+        organizeTasks(currentProject)
 
         inputTask.value = '';
         inputDate.value = '';

@@ -20,3 +20,28 @@
     margin: var(--constant-space);
     margin-top: auto;
 }
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--light-green);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.task-header-right {
+    display: flex;
+    align-items: center;
+}
+
+.description {
+    background-color: var(--dark-green);
+    padding: 20px 20px 60px 20px;
+    border-radius: 8px;
+}
+
+.star-img {
+    width: 40px;
+    margin-left: 20px;
+}
