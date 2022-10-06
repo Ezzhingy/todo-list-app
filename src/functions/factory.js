@@ -8,10 +8,14 @@ export class allProjects {
     static projectObj = {};
 }
 
-export function task (title, date, priority, description) {
-    return {title, date, priority, description};
+export function task (title, date, priority, description, hash) {
+    return {title, date, priority, description, hash};
 }
 
 export class allTasks {
     static allTasksArray = [];
+    static count = 0;
 }
+
+
+

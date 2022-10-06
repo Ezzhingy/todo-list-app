@@ -76,9 +76,11 @@ const TaskModal = ({ isShowing, hide }) => {
     
         const date = new Date(tempDate[0], tempDate[1], tempDate[2]);
 
-        const currentTask = task(inputTask.value, date, priority, description.value);
+        const currentTask = task(inputTask.value, date, priority, description.value, allTasks.count);
         allProjects.projectObj[currentProject].taskArray.push(currentTask);
         organizeTasks(currentProject)
+
+        allTasks.count++;
 
         inputTask.value = '';
         inputDate.value = '';

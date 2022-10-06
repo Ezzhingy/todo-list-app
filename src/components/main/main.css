@@ -30,6 +30,11 @@
     border-radius: 8px;
 }
 
+.task-header-left {
+    display: flex;
+    align-items: center;
+}
+
 .task-header-right {
     display: flex;
     align-items: center;
@@ -44,4 +49,13 @@
 .star-img {
     width: 40px;
     margin-left: 20px;
+}
+
+.trash-task-img {
+    width: 40px;
+    margin-right: 20px;
+}
+
+.trash-task-img:hover {
+    cursor: pointer;
 }
