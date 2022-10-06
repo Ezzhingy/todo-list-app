@@ -33,7 +33,7 @@ const ProjectModal = ({ isShowing, hide }) => {
                             </div>
                             <form className='project-form' onSubmit={submitProject}>
                                 <label htmlFor="project-name">Project Name</label>
-                                <input type="text" id="project-name" required/>
+                                <input type="text" id="project-name"  maxLength={25} required/>
                                 <button className='projectmodal-btn' type='submit'>add project</button>
                             </form>
                         </div>
@@ -122,7 +122,7 @@ const TaskModal = ({ isShowing, hide }) => {
                             <form className="task-form" onSubmit={submitTask}>
                                 <div className="input-container">
                                     <label htmlFor="task-name">Task Name</label>
-                                    <input type="text" id="task-name" required/>
+                                    <input type="text" id="task-name" maxLength={25} required/>
                                 </div>
 
                                 <div className="input-container">
@@ -142,7 +142,7 @@ const TaskModal = ({ isShowing, hide }) => {
 
                                 <div className="textarea-container">
                                     <label htmlFor="description">Description</label>
-                                    <textarea id="description" name="description" rows="5" cols="30" required></textarea>
+                                    <textarea id="description" name="description" rows="5" cols="30" maxLength={100} required></textarea>
                                 </div>
 
                                 <button className="taskmodal-btn" type="submit">Add Task</button>
