@@ -13,9 +13,12 @@ const ProjectModal = ({ isShowing, hide }) => {
     function submitProject (e) {
         e.preventDefault();
         const inputProject = document.getElementById('project-name');
-        const newProject = project(inputProject.value);
+        const newProject = project(inputProject.value, allProjects.count);
         allProjects.projectObj[inputProject.value] = newProject;
         inputProject.value = '';
+
+        allProjects.count++;
+
         hide();
     }
 

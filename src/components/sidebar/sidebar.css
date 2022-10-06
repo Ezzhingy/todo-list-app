@@ -18,7 +18,6 @@
     border: none;
     border-radius: 8px;
     margin: var(--constant-space);
-    margin-top: auto;
 }
 
 .project-card:hover {
@@ -26,12 +25,21 @@
     background-color: var(--light-green);
 }
 
-.sidebar-grid button {
-    position: relative;
+.project-x {
+    display: flex;
+    align-items: center;
+
 }
 
 .sidebar-grid span {
     margin-right: auto;
     position: absolute;
-    right: 5%;
+    left: 8%;
+    font-size: 1.5rem;
+    opacity: 0;
+}
+
+.sidebar-grid .x {
+    opacity: 1;
+    cursor: pointer;
 }

@@ -27,8 +27,9 @@ export const Main = (props) => {
 
     return (
         <div className='main-grid'>
-            {props.titleRef.current !== null ? 
-                props.titleRef.current.innerText !== 'todo list' ? 
+            {/* {console.log(allProjects.projectObj)} */}
+            {props.titleRef.current !== null ?
+                props.titleRef.current.innerText !== 'todo list' && props.titleRef.current.innerText in allProjects.projectObj ? 
                     Object.values(allProjects.projectObj[props.titleRef.current.innerText].taskArray).map((task, index) => 
                         <div ref={taskRef} className='task-card' key={index} task-key={task.hash}>
                             <div className='task-header'>
