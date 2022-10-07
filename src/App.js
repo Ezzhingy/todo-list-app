@@ -16,34 +16,32 @@ const App = () => {
   const {isShowingProject, toggleProject} = useModalProject();
   const {isShowingTask, toggleTask} = useModalTask();
 
-  // useEffect(() => {
-  //   const getProjectsString = localStorage.getItem('projects');
-  //   const getProjects = JSON.parse(getProjectsString);
+  useEffect(() => {
+    const getProjectsString = localStorage.getItem('projects');
+    const getProjects = JSON.parse(getProjectsString);
   
-  //   if (getProjects !== null) {
+    if (getProjects !== null) {
        
-  //     for (let task in getProjects) {
-  //       if (getProjects[task].taskArray !== undefined) {
-  //         if (getProjects[task].taskArray.length !== 0) {
+      for (let task in getProjects) {
+        if (getProjects[task].taskArray.length !== 0) {
 
-  //           let tempDate = getProjects[task].taskArray[0].date;
-  //           tempDate = tempDate.slice(0, 10).split('-');
-  //           if (tempDate[1] === '1') {
-  //               tempDate[1] = '12';
-  //           } else {
-  //               tempDate[1] -= 1;
-  //           }
-  //           const date = new Date(tempDate[0], tempDate[1], tempDate[2]);
-  //           getProjects[task].taskArray[0].date = date;
-          
-  //         }
-  //         allProjects.projectObj = getProjects;
-      
-  //         setFoo(foo + 1);
-  //       }
-  //     }  
-  //   }
-  // }, []);
+          let tempDate = getProjects[task].taskArray[0].date;
+          tempDate = tempDate.slice(0, 10).split('-');
+          if (tempDate[1] === '1') {
+              tempDate[1] = '12';
+          } else {
+              tempDate[1] -= 1;
+          }
+          const date = new Date(tempDate[0], tempDate[1], tempDate[2]);
+          getProjects[task].taskArray[0].date = date;
+        
+        }
+        allProjects.projectObj = getProjects;
+    
+        setFoo(foo + 1);
+      }
+    }
+  }, []);
   
   return (
     <div className="App">
