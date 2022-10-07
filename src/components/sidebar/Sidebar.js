@@ -34,7 +34,7 @@ export const Sidebar = (props) => {
     
     const deleteProject = e => {
         for (let project of Object.values(allProjects.projectObj)) {
-            if (project.hash == e.target.nextElementSibling.getAttribute('project-key')) {
+            if (project.hash === +e.target.nextElementSibling.getAttribute('project-key')) {
                 delete allProjects.projectObj[project.title];
             }
         }

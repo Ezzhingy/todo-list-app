@@ -11,6 +11,7 @@ import { useRef, useState, useEffect} from 'react';
 const App = () => {
 
   const [foo, setFoo] = useState(0);
+
   const titleRef = useRef(null);
   const {isShowingProject, toggleProject} = useModalProject();
   const {isShowingTask, toggleTask} = useModalTask();

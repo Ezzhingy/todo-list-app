@@ -16,7 +16,7 @@ export const Main = (props) => {
 
     function deleteTask (e) {
         for (let task of allProjects.projectObj[props.titleRef.current.innerText].taskArray) {
-            if (task.hash == e.target.parentElement.parentElement.parentElement.getAttribute('task-key')) {
+            if (task.hash === +e.target.parentElement.parentElement.parentElement.getAttribute('task-key')) {
                 const index = allProjects.projectObj[props.titleRef.current.innerText].taskArray.indexOf(task);
                 allProjects.projectObj[props.titleRef.current.innerText].taskArray.splice(index, 1);
                 setFoo(foo + 1);
@@ -33,13 +33,13 @@ export const Main = (props) => {
                         <div ref={taskRef} className='task-card' key={index} task-key={task.hash}>
                             <div className='task-header'>
                                 <div className='task-header-left'>
-                                    <img className='trash-task-img' src={deleteTaskImg} onClick={(e) => deleteTask(e, taskRef)} alt="Delete Task Image" />
+                                    <img className='trash-task-img' src={deleteTaskImg} onClick={(e) => deleteTask(e, taskRef)} alt="Delete Task" />
                                     {task.title}
                                 </div>
                                 <div className='task-header-right'>
                                     <div>{format(task.date, 'MMM dd yyyy')}</div>
                                     <div>
-                                        {task.priority === 'yes' ? (<img className="star-img" src={starFill} alt="Priority Star Image" />) : null}
+                                        {task.priority === 'yes' ? (<img className="star-img" src={starFill} alt="Priority Star" />) : null}
                                     </div>
                                 </div>
                             </div>
