@@ -1,0 +1,258 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
+
+:root {
+    --lightest-green: #CFF7DE;
+    --light-green: #A7EAC9;
+    --medium-green: #7DD3B5;
+    --dark-green: #57B59C;
+    --constant-space: 40px;
+}
+
+.body-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 4fr;
+    min-height: 100vh;
+}
+
+.sidebar-container {
+    background-color: var(--lightest-green);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-container h1 {
+    margin-bottom: 60px;
+}
+
+.sidebar-container .add-project-btn {
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    margin: var(--constant-space);
+    margin-top: auto;
+    z-index: 1000;
+}
+
+.sidebar-container .add-project-btn:hover {
+    cursor: pointer;
+    background-color: var(--light-green);
+}
+
+.main-container {
+    background-color: var(--medium-green);
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container .add-task-btn {
+    display: none;
+    padding: 10px;
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    margin: var(--constant-space);
+    margin-top: auto;
+    z-index: 1000;
+}
+
+.main-container .add-task-btn:hover {
+    cursor: pointer;
+    background-color: var(--light-green);
+}
+
+/* Modal Logic,  https://upmostly.com/tutorials/modal-components-react-custom-hooks*/
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    opacity: .5;
+}
+  
+.modal-wrapper {
+    position: fixed;
+    top: 20%;
+    left: 0;
+    z-index: 1050;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+  
+.modal {
+    z-index: 100;
+    background: var(--lightest-green);
+    position: relative;
+    margin: 1.75rem auto;
+    border-radius: 8px;
+    max-width: 500px;
+    padding: 1rem;
+}
+  
+.modal-header {
+    display: flex;
+    justify-content: flex-end;
+}
+  
+.modal-close-button {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    opacity: .3;
+    cursor: pointer;
+    border: none;
+}
+/* End of Modal Logic */
+
+.title {
+    text-align: center;
+    font-weight: normal;
+    font-size: 1.5rem;
+    margin-top: 25px;
+}
+
+.footer {
+    font-size: 1rem;
+    display: flex;
+    margin-top: auto;
+    justify-content: center;
+    background-color: var(--dark-green);
+}
+
+.footer p {
+    text-align: center;
+}
+
+.footer a {
+    text-decoration: none;
+    color: black;
+}
+
+.footer a:hover {
+    font-weight: 700;
+}
+
+/* Bubbles */
+.bg-bubbles {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+} 
+
+li {
+    position: absolute;
+    list-style: none;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    opacity: 0.15;
+    bottom: 0;
+    
+    -webkit-animation: square 25s infinite;
+    animation:         square 25s infinite;
+    
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+}
+li:nth-child(1){
+    left: 10%;
+}
+
+li:nth-child(2){
+    left: 20%;
+    
+    width: 80px;
+    height: 80px;
+    
+    animation-delay: 2s;
+    animation-duration: 17s;
+}
+
+li:nth-child(3){
+    left: 25%;
+    animation-delay: 4s;
+}
+
+li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    
+    animation-duration: 22s;
+    
+    background-color: white;
+    opacity: 0.25;
+}
+
+li:nth-child(5){
+    left: 70%;
+}
+
+li:nth-child(6){
+    left: 80%;
+    width: 120px;
+    height: 120px;
+    
+    animation-delay: 3s;
+    background-color: white;
+    opacity: .2;
+}
+
+li:nth-child(7){
+    left: 32%;
+    width: 160px;
+    height: 160px;
+    
+    animation-delay: 7s;
+}
+
+li:nth-child(8){
+    left: 55%;
+    width: 20px;
+    height: 20px;
+    
+    animation-delay: 15s;
+    animation-duration: 40s;
+}
+
+li:nth-child(9){
+    left: 25%;
+    width: 10px;
+    height: 10px;
+    
+    animation-delay: 2s;
+    animation-duration: 40s;
+    background-color: white;
+    opacity: .3;
+}
+
+li:nth-child(10){
+    left: 90%;
+    width: 160px;
+    height: 160px;
+    
+    animation-delay: 11s;
+}
+
+@-webkit-keyframes square {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-700px) rotate(600deg); }
+}
+
+@keyframes square {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-700px) rotate(600deg); }
+}
+
+

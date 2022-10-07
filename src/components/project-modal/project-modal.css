@@ -1,0 +1,54 @@
+:root {
+    --lightest-green: #CFF7DE;
+    --light-green: #A7EAC9;
+    --medium-green: #7DD3B5;
+    --dark-green: #57B59C;
+    --constant-space: 40px;
+}
+
+.project-form, .task-form {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    padding: 10px;
+}
+
+.project-form input, .task-form input, .task-form textarea {
+    background: var(--light-green);
+}
+
+.projectmodal-btn, .taskmodal-btn {
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 20px 0 0 0 !important;
+    margin: var(--constant-space);
+}
+
+.projectmodal-btn:hover, .taskmodal-btn:hover {
+    cursor: pointer;
+    background-color: var(--light-green);
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 10px 0;
+}
+
+.radio-container {
+    text-align: start;
+    display: flex;
+    gap: 10px;
+}
+
+.textarea-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.description {
+    text-overflow: wrap;
+}

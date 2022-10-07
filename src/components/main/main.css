@@ -1,0 +1,62 @@
+:root {
+    --lightest-green: #CFF7DE;
+    --light-green: #A7EAC9;
+    --medium-green: #7DD3B5;
+    --dark-green: #57B59C;
+    --constant-space: 40px;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(30px, 1fr));
+    gap: 20px;
+}
+
+.task-card {
+    padding: 10px 50px;
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    margin: var(--constant-space);
+    margin-top: auto;
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--light-green);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.task-header-left {
+    display: flex;
+    align-items: center;
+}
+
+.task-header-right {
+    display: flex;
+    align-items: center;
+}
+
+.description {
+    background-color: var(--dark-green);
+    padding: 20px 20px 60px 20px;
+    border-radius: 8px;
+}
+
+.star-img {
+    width: 40px;
+    margin-left: 20px;
+}
+
+.trash-task-img {
+    width: 40px;
+    margin-right: 20px;
+    z-index: 1000;
+}
+
+.trash-task-img:hover {
+    cursor: pointer;
+}
