@@ -9,7 +9,6 @@ import deleteTaskImg from './checkbox-blank-circle-outline.svg';
 import { useRef, useState } from 'react';
 
 
-
 export const Main = (props) => {
 
     const taskRef = useRef(null);

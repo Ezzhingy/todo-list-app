@@ -3,6 +3,7 @@ import './sidebar.css';
 import { allProjects } from '../../functions/factory';
 import React from 'react';
 
+
 export const Sidebar = (props) => {
 
     const selectProject = e => {
@@ -54,5 +55,4 @@ export const Sidebar = (props) => {
             )}
         </div>
     );
-    
 }
