@@ -34,7 +34,7 @@
 .sidebar-grid span {
     margin-right: auto;
     position: absolute;
-    left: 8%;
+    left: 75px;
     font-size: 1.5rem;
     opacity: 0;
 }

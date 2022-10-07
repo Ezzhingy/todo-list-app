@@ -19,6 +19,8 @@ const ProjectModal = ({ isShowing, hide }) => {
 
         allProjects.count++;
 
+        localStorage.setItem('projects', JSON.stringify(allProjects.projectObj));
+
         hide();
     }
 
@@ -90,6 +92,8 @@ const TaskModal = ({ isShowing, hide }) => {
         description.value = '';
         hide();
         getTasks(currentProject);
+
+        localStorage.setItem('projects', JSON.stringify(allProjects.projectObj));
     }
 
     const getTasks = (title) => {

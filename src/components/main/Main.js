@@ -22,12 +22,12 @@ export const Main = (props) => {
                 allProjects.projectObj[props.titleRef.current.innerText].taskArray.splice(index, 1);
                 setFoo(foo + 1);
             }
-        }        
+        }  
+        localStorage.setItem('projects', JSON.stringify(allProjects.projectObj));      
     }
 
     return (
         <div className='main-grid'>
-            {/* {console.log(allProjects.projectObj)} */}
             {props.titleRef.current !== null ?
                 props.titleRef.current.innerText !== 'todo list' && props.titleRef.current.innerText in allProjects.projectObj ? 
                     Object.values(allProjects.projectObj[props.titleRef.current.innerText].taskArray).map((task, index) => 
