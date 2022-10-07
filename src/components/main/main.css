@@ -54,6 +54,7 @@
 .trash-task-img {
     width: 40px;
     margin-right: 20px;
+    z-index: 1000;
 }
 
 .trash-task-img:hover {

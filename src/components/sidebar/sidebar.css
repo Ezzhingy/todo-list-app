@@ -13,7 +13,7 @@
 }
 
 .project-card {
-    padding: 10px 50px;
+    padding: 10px 60px;
     background-color: transparent;
     border: none;
     border-radius: 8px;
@@ -28,13 +28,14 @@
 .project-x {
     display: flex;
     align-items: center;
-
+    z-index: 1000;
+    position: relative;
 }
 
 .sidebar-grid span {
     margin-right: auto;
     position: absolute;
-    left: 75px;
+    left: 20%;
     font-size: 1.5rem;
     opacity: 0;
 }

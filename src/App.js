@@ -58,8 +58,20 @@ const App = () => {
             hide={toggleProject}
           />
         </div>
-      
+  
         <div className='main-container'>
+          <ul className="bg-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
           <h1 ref={titleRef} className='title'>todo list</h1>
           <Main titleRef={titleRef}/>
           <button className='add-task-btn' onClick={toggleTask}>+ add a task</button>
@@ -69,6 +81,9 @@ const App = () => {
           />
         </div>
       </div>
+      <div className="footer">
+            <p>Copyright © <a href="https://github.com/Ezzhingy">Ezzhingy</a> 2022</p>
+      </div>  
     </div>
   );
 }
