@@ -23,8 +23,8 @@ const App = () => {
     if (getProjects !== null) {
        
       for (let task in getProjects) {
-
-        if (getProjects[task].taskArray.length !== 0) {
+        if (getProjects[task].taskArray !== undefined) {
+          if (getProjects[task].taskArray.length !== 0) {
 
             let tempDate = getProjects[task].taskArray[0].date;
             tempDate = tempDate.slice(0, 10).split('-');
@@ -36,11 +36,12 @@ const App = () => {
             const date = new Date(tempDate[0], tempDate[1], tempDate[2]);
             getProjects[task].taskArray[0].date = date;
           
+          }
+          allProjects.projectObj = getProjects;
+      
+          setFoo(foo + 1);
         }
-        allProjects.projectObj = getProjects;
-    
-        setFoo(foo + 1);
-      }
+      }  
     }
   }, []);
   
