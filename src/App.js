@@ -36,10 +36,9 @@ const App = () => {
           getProjects[task].taskArray[0].date = date;
         
         }
-        allProjects.projectObj = getProjects;
-    
-        setFoo(foo + 1);
       }
+      allProjects.projectObj = getProjects;
+      setFoo(foo + 1);
     }
   }, []);
   
