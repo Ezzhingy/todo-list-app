@@ -34,7 +34,6 @@ export const Main = (props) => {
       }
     }
     saveTodo(allProjects.projectObj);
-    localStorage.setItem("projects", JSON.stringify(allProjects.projectObj));
   }
 
   return (

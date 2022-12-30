@@ -44,7 +44,6 @@ export const Sidebar = (props) => {
 
     resetProject();
     saveTodo(allProjects.projectObj);
-    localStorage.setItem("projects", JSON.stringify(allProjects.projectObj));
     props.setFoo(props.foo + 1);
   };
 

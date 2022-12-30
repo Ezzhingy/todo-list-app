@@ -7,7 +7,6 @@ import {
   doc,
   deleteDoc,
   getDocs,
-  onSnapshot,
 } from "firebase/firestore";
 
 import { allProjects } from "../../functions/factory";
