@@ -14,19 +14,55 @@
   min-height: 100vh;
 }
 
+#user-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.hide {
+  display: none !important;
+}
+
 #sign-in,
 #sign-out {
   background-color: transparent;
   border: none;
-  margin-left: auto;
   margin-right: 16px;
   margin-top: 16px;
+  z-index: 1000;
+  position: relative;
+  height: 48px;
+}
+
+#sign-in:hover,
+#sign-out:hover {
+  background-color: #aae3cf;
+  cursor: pointer;
 }
 
 #sign-in {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+#user-name {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+  margin-top: 16px;
+}
+
+#user-pic {
+  position: relative;
+  top: 5px;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  background-size: 40px;
+  border-radius: 20px;
 }
 
 .sidebar-container {
@@ -178,10 +214,11 @@
   #sign-out {
     font-size: 0.9rem;
     margin: 0;
+    margin-top: 16px;
   }
 
   #sign-in {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   #user-container {
@@ -303,3 +340,7 @@ li:nth-child(9) {
     transform: translateY(-700px) rotate(600deg);
   }
 }
+
+/* #must-signin-snackbar {
+  position: absolute;
+} */
