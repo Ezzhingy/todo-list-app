@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { checkSignedInWithMessage } from "../index";
+import { checkSignedInWithMessage } from "../components/firebase/firebase-config";
 
 const useModalProject = () => {
   const [isShowingProject, setIsShowing] = useState(false);

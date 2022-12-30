@@ -104,10 +104,6 @@ const App = () => {
           <TaskModal isShowing={isShowingTask} hide={toggleTask} />
         </div>
       </div>
-      {/* <div id="must-signin-snackbar">
-        <div class="snackbar-text"></div>
-        <button class="snackbar-action" type="button"></button>
-      </div> */}
       <div className="footer">
         <p>
           Copyright © <a href="https://github.com/Ezzhingy">Ezzhingy</a> 2022
