@@ -14,6 +14,21 @@
   min-height: 100vh;
 }
 
+#sign-in,
+#sign-out {
+  background-color: transparent;
+  border: none;
+  margin-left: auto;
+  margin-right: 16px;
+  margin-top: 16px;
+}
+
+#sign-in {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .sidebar-container {
   background-color: var(--lightest-green);
   display: flex;
@@ -150,8 +165,36 @@
 }
 
 @media screen and (max-width: 600px) {
+  .body-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1.5fr;
+  }
+
   .bg-bubbles {
     width: 50%;
+  }
+
+  #sign-in,
+  #sign-out {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  #sign-in {
+    flex-direction: column;
+  }
+
+  #user-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .task-header {
+    gap: 10px;
+  }
+
+  .task-card {
+    padding: 0;
   }
 }
 
