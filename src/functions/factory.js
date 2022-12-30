@@ -7,6 +7,7 @@ export function project(title, hash) {
 export class allProjects {
   static projectObj = {};
   static count = 0;
+  static userID = "";
 }
 
 export function task(title, date, priority, description, hash) {

@@ -6,6 +6,7 @@ import {
 } from "./components/project-modal/ProjectModal";
 import { useModalProject, useModalTask } from "./hooks/useModal";
 import { allProjects } from "./functions/factory";
+import { loadTodo } from "./components/firebase/firebase-config";
 
 import "./app.css";
 
@@ -16,6 +17,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
 
 const App = () => {
@@ -27,34 +29,79 @@ const App = () => {
 
   function signOutUser() {
     signOut(getAuth());
+    const mainGrid = document.querySelector(".main-grid");
+    const sidebarGrid = document.querySelector(".sidebar-grid");
+    const title = document.querySelector(".title");
+    mainGrid.classList.add("hide");
+    sidebarGrid.classList.add("hide");
+    title.innerText = "todo list";
   }
 
   async function signIn() {
     let provider = new GoogleAuthProvider();
     await signInWithPopup(getAuth(), provider);
+    onAuthStateChanged(getAuth(), function (user) {
+      if (user) {
+        allProjects.userID = user.uid;
+        console.log("asdsa", user.uid);
+      }
+    });
+
+    const mainGrid = document.querySelector(".main-grid");
+    const sidebarGrid = document.querySelector(".sidebar-grid");
+    mainGrid.classList.remove("hide");
+    sidebarGrid.classList.remove("hide");
   }
 
   useEffect(() => {
-    const getProjectsString = localStorage.getItem("projects");
-    const getProjects = JSON.parse(getProjectsString);
+    // const getProjectsString = localStorage.getItem("projects");
+    // const getProjects = JSON.parse(getProjectsString);
+    // if (getProjects !== null) {
+    // for (let task in getProjects) {
+    //   if (getProjects[task].taskArray.length !== 0) {
+    //     let tempDate = getProjects[task].taskArray[0].date;
+    //     tempDate = tempDate.slice(0, 10).split("-");
+    //     if (tempDate[1] === "1") {
+    //       tempDate[1] = "12";
+    //     } else {
+    //       tempDate[1] -= 1;
+    //     }
+    //     const date = new Date(tempDate[0], tempDate[1], tempDate[2]);
+    //     getProjects[task].taskArray[0].date = date;
+    //   }
+    // }
+    // allProjects.projectObj = getProjects;
 
-    if (getProjects !== null) {
-      for (let task in getProjects) {
-        if (getProjects[task].taskArray.length !== 0) {
-          let tempDate = getProjects[task].taskArray[0].date;
-          tempDate = tempDate.slice(0, 10).split("-");
-          if (tempDate[1] === "1") {
-            tempDate[1] = "12";
-          } else {
-            tempDate[1] -= 1;
+    async function openLoad() {
+      try {
+        onAuthStateChanged(getAuth(), async function (user) {
+          if (user) {
+            // User is signed in.
+            allProjects.userID = user.uid;
+            const data = await loadTodo(user.uid);
+            const getProjects = data !== undefined ? data.allProjects : {};
+            for (let project in getProjects) {
+              if (getProjects[project].taskArray.length > 0) {
+                for (
+                  let i = 0;
+                  i < getProjects[project].taskArray.length;
+                  i++
+                ) {
+                  let tempDate = getProjects[project].taskArray[i].date;
+                  const actualDate = new Date(tempDate.seconds * 1000);
+                  getProjects[project].taskArray[i].date = actualDate;
+                }
+              }
+            }
+            allProjects.projectObj = getProjects;
+            setFoo(foo + 1);
           }
-          const date = new Date(tempDate[0], tempDate[1], tempDate[2]);
-          getProjects[task].taskArray[0].date = date;
-        }
+        });
+      } catch (error) {
+        console.error(error);
       }
-      allProjects.projectObj = getProjects;
-      setFoo(foo + 1);
     }
+    openLoad();
   }, []);
 
   return (

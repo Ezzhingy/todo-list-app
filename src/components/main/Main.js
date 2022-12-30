@@ -1,6 +1,8 @@
 import "./main.css";
 
 import { allProjects } from "../../functions/factory";
+import { saveTodo } from "../firebase/firebase-config";
+
 import { format } from "date-fns";
 
 import starFill from "./star-fill.svg";
@@ -31,6 +33,7 @@ export const Main = (props) => {
         setFoo(foo + 1);
       }
     }
+    saveTodo(allProjects.projectObj);
     localStorage.setItem("projects", JSON.stringify(allProjects.projectObj));
   }
 

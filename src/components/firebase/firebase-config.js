@@ -4,18 +4,13 @@ import {
   getFirestore,
   collection,
   addDoc,
-  query,
-  orderBy,
-  limit,
-  onSnapshot,
-  setDoc,
-  updateDoc,
   doc,
   deleteDoc,
-  serverTimestamp,
-  Firestore,
   getDocs,
+  onSnapshot,
 } from "firebase/firestore";
+
+import { allProjects } from "../../functions/factory";
 
 const config = {
   apiKey: "AIzaSyDQgl-CBe_LLgHO4jNUIwBEst-NzKY6Ees",
@@ -46,7 +41,7 @@ function getUserName() {
   return getAuth().currentUser.displayName;
 }
 
-function isUserSignedIn() {
+export function isUserSignedIn() {
   return !!getAuth().currentUser;
 }
 
@@ -110,16 +105,32 @@ function authStateObserver(user) {
 
 export async function saveTodo(projectObj) {
   try {
-    const recentTodoQuery = collection(getFirestore(), "todo");
+    const recentTodoQuery = collection(getFirestore(), allProjects.userID);
     const querySnapshot = await getDocs(recentTodoQuery);
     if (querySnapshot.docs.length !== 0) {
-      await deleteDoc(doc(getFirestore(), "todo", querySnapshot.docs[0].id));
+      await deleteDoc(
+        doc(getFirestore(), allProjects.userID, querySnapshot.docs[0].id)
+      );
     }
-    await addDoc(collection(getFirestore(), "todo"), {
+    await addDoc(collection(getFirestore(), allProjects.userID), {
       allProjects: projectObj,
     });
   } catch (error) {
     console.error("Error writing new todo to Firebase Database", error);
+  }
+}
+
+export async function loadTodo(id) {
+  try {
+    let data;
+    const recentTodoQuery = collection(getFirestore(), id);
+    const querySnapshot = await getDocs(recentTodoQuery);
+    querySnapshot.forEach((doc) => {
+      data = doc.data();
+    });
+    return data;
+  } catch (error) {
+    return undefined;
   }
 }
 

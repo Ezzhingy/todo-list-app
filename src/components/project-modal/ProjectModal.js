@@ -19,7 +19,6 @@ const ProjectModal = ({ isShowing, hide }) => {
     allProjects.count++;
 
     saveTodo(allProjects.projectObj);
-    console.log("done");
     localStorage.setItem("projects", JSON.stringify(allProjects.projectObj));
 
     hide();
@@ -120,7 +119,7 @@ const TaskModal = ({ isShowing, hide }) => {
     hide();
     getTasks(currentProject);
 
-    // saveTodo(allProjects.projectObj);
+    saveTodo(allProjects.projectObj);
     localStorage.setItem("projects", JSON.stringify(allProjects.projectObj));
   }
 
