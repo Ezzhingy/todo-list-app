@@ -9,3 +9,4 @@ Designed using Figma. Created using HTML, CSS, JavaScript, and React. Uses Fireb
 - Explore services offered by Firebase, including Cloud Firestore and Authentication
     - Use Google Authentication to allow every user to personalize their own private TODO list
     - Store different userIDs in Cloud Firestore and organize the documents to be added and extracted 
+    - Learn how to write security rules and the structure of .json files
