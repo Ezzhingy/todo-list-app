@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default0": "todo-list-app-9ad7c"
+    "default": "todo-list-app-9ad7c"
   },
   "targets": {},
   "etags": {}

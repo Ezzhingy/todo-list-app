@@ -43,7 +43,6 @@ const App = () => {
     onAuthStateChanged(getAuth(), function (user) {
       if (user) {
         allProjects.userID = user.uid;
-        console.log("asdsa", user.uid);
       }
     });
 
@@ -83,7 +82,9 @@ const App = () => {
         console.error(error);
       }
     }
-    openLoad();
+    setTimeout(() => {
+      openLoad();
+    }, "1000");
   }, []);
 
   return (
