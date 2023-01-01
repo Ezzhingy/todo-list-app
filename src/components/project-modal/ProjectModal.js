@@ -173,7 +173,13 @@ const TaskModal = ({ isShowing, hide }) => {
 
               <div className="input-container">
                 <label htmlFor="due-date">Due Date</label>
-                <input type="date" id="due-date" required />
+                <input
+                  type="date"
+                  id="due-date"
+                  min="2000-01-01"
+                  max="9999-12-31"
+                  required
+                />
               </div>
 
               <div className="radio-container">
